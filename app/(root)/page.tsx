@@ -185,7 +185,7 @@ const Home = () => {
           </p>
         </div>
         <div className="clients p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 " >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5 " >
             {
               client?.length > 0 && client.map((ct, index) => {
                 return (
