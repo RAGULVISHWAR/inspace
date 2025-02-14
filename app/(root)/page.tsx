@@ -117,7 +117,7 @@ const Home = () => {
       {/* div four Feature text-[clamp(1rem,1.2vw,2.2rem)] text-[clamp(1.2rem,1.8vw,3.5rem)] text-[clamp(1rem,1.2vw,2rem)]  text-[clamp(1.2rem,1.5vw,3.5rem)] */}
       <div className="feature-div w-full text-primary p-5 sm:p-7 md:p-9 lg:p-12 space-y-6 sm:space-y-8 md:space-y-12 lg:space-y-14">
         <div className="head-div place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5">
-          <p className="rounded-full border-2 border-primary p-2 w-fit font-semibold text-[clamp(1rem,1.2vw,2.2rem)]">
+          <p className="rounded-full border border-primary p-2 px-6  w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
             Featured Portfolios
           </p>
           <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold">
@@ -128,7 +128,7 @@ const Home = () => {
           </p>
         </div>
         <div className="portfolios-div">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-5 md:gap-12 px-8 sm:px-12 md:px-16 lg:px-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-5 md:gap-12 px-1 sm:px-6 md:px-8 lg:px-10">
             {image?.length > 0 &&
               image.map((img, index) => {
                 return (
@@ -157,9 +157,24 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* div five Brands */}
-      <div className="brands">
-        <div>Brands</div>
+      {/* div five clients */}
+      <div className="clients-div">
+        <div className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5">
+          <p className="rounded-full border border-primary p-2 px-6 w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
+            Trusted
+          </p>
+          <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold">
+            Our Clients
+          </p>
+          <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
+            We providing world class  that help&apos;s you to 10x your speed.
+          </p>
+        </div>
+        <div className="clients">
+          <div >
+
+          </div>
+        </div>
       </div>
     </div>
   );
