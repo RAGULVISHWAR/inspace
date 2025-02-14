@@ -196,7 +196,7 @@ const Home = () => {
                       fill
                       className="object-cover transition-transform transform duration-300 ease-in-out group-hover:scale-110"
                     />
-                    <div className="absolute top-1/3 left-1/3 w-[50px] h-[50px] md:w-[100px] md:h-[100px]">
+                    <div className="absolute top-1/3 left-1/3 w-[50px] h-[25px] md:w-[125px] md:h-[100px]">
                       <Image
                         src={ct[1]}
                         alt={`${index}`}
