@@ -16,6 +16,20 @@ const Home = () => {
     ["/images/silver.png", "Silver lady", "/"],
     ["/images/station.png", "In station and out station 2", "/"],
   ];
+  const client: [string, string][] = [
+    ["/images/clients/client-bg/bg-1.png", "/images/clients/client1.png"],
+    ["/images/clients/client-bg/bg-2.png", "/images/clients/client2.png"],
+    ["/images/clients/client-bg/bg-3.png", "/images/clients/client3.png"],
+    ["/images/clients/client-bg/bg-4.png", "/images/clients/client4.png"],
+    ["/images/clients/client-bg/bg-5.png", "/images/clients/client5.png"],
+    ["/images/clients/client-bg/bg-6.png", "/images/clients/client6.png"],
+    ["/images/clients/client-bg/bg-7.png", "/images/clients/client7.png"],
+    ["/images/clients/client-bg/bg-8.png", "/images/clients/client8.png"],
+    ["/images/clients/client-bg/bg-9.png", "/images/clients/client9.png"],
+    ["/images/clients/client-bg/bg-10.png", "/images/clients/client10.png"],
+    ["/images/clients/client-bg/bg-11.png", "/images/clients/client11.png"],
+    ["/images/clients/client-bg/bg-12.png", "/images/clients/client12.png"],
+  ];
   return (
     <div className="home ">
       {/* div one Welcome text-[clamp(2rem,6vw,4.5rem)] text-base */}
@@ -170,9 +184,30 @@ const Home = () => {
             We providing world class  that help&apos;s you to 10x your speed.
           </p>
         </div>
-        <div className="clients">
-          <div >
-
+        <div className="clients p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 " >
+            {
+              client?.length > 0 && client.map((ct, index) => {
+                return (
+                  <div key={index} className="relative w-full h-[100px] md:h-[250px] rounded-2xl overflow-hidden group">
+                    <Image
+                      src={ct[0]}
+                      alt={`${index}`}
+                      fill
+                      className="object-cover transition-transform transform duration-300 ease-in-out group-hover:scale-110"
+                    />
+                    <div className="absolute top-1/3 left-1/3 w-[50px] h-[50px] md:w-[100px] md:h-[100px]">
+                      <Image
+                        src={ct[1]}
+                        alt={`${index}`}
+                        fill
+                        className="object-fill"
+                      />
+                    </div>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>
