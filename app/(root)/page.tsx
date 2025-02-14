@@ -21,7 +21,7 @@ const Home = () => {
       {/* div one Welcome */}
       <div className="welcome-div relative w-full h-screen">
         <Image src={home} alt="home" fill className="object-cover object-center" />
-        <div className="absolute left-0 bottom-0 w-full p-5 md:p-10 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+        <div className="absolute left-0 bottom-0 w-full p-5 mb-16 md:p-10 flex flex-col sm:flex-row justify-between items-start sm:items-center">
           <div className="text-white font-medium text-[clamp(1.5rem,5vw,4rem)]">
             <p>INSPACE RETAIL</p>
             <p>DISPLAYS FOR SHOP</p>
