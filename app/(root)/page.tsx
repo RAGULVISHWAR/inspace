@@ -112,7 +112,7 @@ const Home = () => {
             {image?.length > 0 && image.map((img, index) => {
               return (
                 <Link href={'/'} key={index}>
-                  <div className="relative w-full h-[200] lg:h-[400] xl:h-[650] rounded-2xl overflow-hidden group" >
+                  <div className="relative w-full h-[200px] lg:h-[400px] xl:h-[650px] rounded-2xl overflow-hidden group" >
                     <Image
                       src={img[0]}
                       alt={img[1]}
