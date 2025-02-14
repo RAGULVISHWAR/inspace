@@ -71,7 +71,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* div three Choose*/}
+      {/* div three Choose */}
       <div className="choose-div w-full bg-primaryLight p-6 sm:p-8 md:p-10 lg:p-12 py-10 sm:py-12 md:py-16 lg:py-18 space-y-10 md:space-y-20">
         <div className="head-div w-full gap-5">
           <div className="text-center text-primary text-[clamp(1.5rem,3vw,6rem)] font-medium">Why Choose Inspace ?</div>
@@ -100,7 +100,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* div four Feature*/}
+      {/* div four Feature */}
       <div className="feature-div w-full text-primary p-4 sm:p-6 md:p-8 lg:p-10 space-y-5 sm:space-y-7 md:space-y-10 lg:space-y-12">
         <div className="head-div place-items-center w-full space-y-2 sm:space-y-3 md:space-y-4 ">
           <p className="rounded-full border-2 border-primary p-2 w-fit font-medium text-[clamp(0.75rem,1vw,2rem)]">featured portfolios</p>
@@ -135,6 +135,10 @@ const Home = () => {
             })}
           </div>
         </div>
+      </div>
+      {/* div five Brands */}
+      <div className="brands">
+
       </div>
     </div>
   );
