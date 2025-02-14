@@ -109,7 +109,7 @@ const Home = () => {
         </div>
         <div className="portfolios-div">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-4 md:gap-10 px-7 sm:px-10 md:px-15 lg:px-20">
-            {image.map((img, index) => {
+            {image?.length > 0 && image.map((img, index) => {
               return (
                 <Link href={'/'} key={index}>
                   <div className="relative w-full h-[200] lg:h-[400] xl:h-[650] rounded-2xl overflow-hidden group" >
