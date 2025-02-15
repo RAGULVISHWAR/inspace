@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Counter } from "../../components/Animations/counter";
 import { ArrowUpRight } from 'lucide-react';
 import Link from "next/link";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const Home = () => {
   const image: [string, string, string][] = [
     ["/images/saravana.png", "Saravana stores", "/"],
@@ -175,7 +176,7 @@ const Home = () => {
         </div>
       </div>
       {/* div five clients */}
-      <div className="clients-div">
+      <div className="clients-div p-5 sm:p-7 md:p-9 lg:p-12">
         <div className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5">
           <p className="rounded-full border border-primary p-2 px-6 w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
             Trusted
@@ -192,7 +193,7 @@ const Home = () => {
             {
               client?.length > 0 && client.map((ct, index) => {
                 return (
-                  <div key={index} className="relative w-full h-[100px] md:h-[250px] rounded-2xl overflow-hidden group">
+                  <div key={index} className="relative w-full h-[100px] md:h-[250px] rounded-2xl overflow-hidden group  shadow-md md:shadow-lg shadow-black md:shadow-black">
                     <Image
                       src={ct[0]}
                       alt={`${index}`}
@@ -211,6 +212,49 @@ const Home = () => {
                 )
               })
             }
+          </div>
+        </div>
+      </div>
+      {/* div five testimonal */}
+      <div className="testimonal-div p-5 sm:p-7 md:p-9 lg:p-12">
+        <div className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5">
+          <p className="rounded-full border border-primary p-2 px-6 w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
+            Testimonials
+          </p>
+          <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold">
+            Join the customer who&apos;ve already
+          </p>
+          <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
+            We providing world class  that help&apos;s you to 10x your speed.
+          </p>
+        </div>
+      </div>
+      {/* div six caption */}
+      <div className="caption-div p-5 sm:p-7 md:p-9 lg:p-12">
+        <div className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5">
+          <p className="rounded-full border border-primary p-2 px-6 w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
+            Caption
+          </p>
+          <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold">
+            Frequently Asked Questions
+          </p>
+          <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
+            Still you have any questions? Contact our Team via <Link href={'support@inspacestore.in'} className="text-blue-500">support@inspacestore.in</Link>
+          </p>
+        </div>
+        <div>
+          <div>
+
+          </div>
+          <div>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </div>
