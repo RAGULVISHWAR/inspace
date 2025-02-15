@@ -185,7 +185,7 @@ const Home = () => {
           </p>
         </div>
         <div className="clients p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5 " >
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-5 " >
             {
               client?.length > 0 && client.map((ct, index) => {
                 return (
@@ -196,12 +196,12 @@ const Home = () => {
                       fill
                       className="object-cover transition-transform transform duration-300 ease-in-out group-hover:scale-110"
                     />
-                    <div className="absolute top-1/3 left-1/3 w-[50px] h-[25px] md:w-[125px] md:h-[100px]">
+                    <div className="absolute top-1 md:top-1/3  w-full h-[90px]">
                       <Image
                         src={ct[1]}
                         alt={`${index}`}
                         fill
-                        className="object-fill"
+                        className="object-contain p-2 sm:p-3"
                       />
                     </div>
                   </div>
