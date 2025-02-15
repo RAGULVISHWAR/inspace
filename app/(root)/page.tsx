@@ -1,7 +1,7 @@
 import Image from "next/image";
 import home from "@/public/images/home-img.png"
 import { Button } from "@/components/ui/button";
-import { Counter } from "../components/Animations/counter";
+import { Counter } from "../../components/Animations/counter";
 import { ArrowUpRight } from 'lucide-react';
 import Link from "next/link";
 const Home = () => {
@@ -93,8 +93,11 @@ const Home = () => {
           <div className="text-center text-primary text-[clamp(2rem,4vw,6.5rem)] font-medium">
             Why Choose Inspace?
           </div>
-          <div className="text-center place-self-center text-[clamp(0.9rem,1vw,1.2rem)] sm:w-2/4 md:w-3/4">
+          <div className="hidden lg:block text-center place-self-center text-[clamp(0.9rem,1vw,1.2rem)] sm:w-2/4 md:w-3/4">
             At Inspace, we&apos;re committed to creating commercial interiors and furniture solutions that go beyond the ordinary. From innovative designs to reliable support, everything we do is focused on helping you transform your space into an immersive and efficient environment.
+          </div>
+          <div className="text-center place-self-center text-[clamp(0.9rem,1vw,1.2rem)] sm:w-2/4 md:w-3/4 lg:hidden">
+            At Inspace, we craft innovative interiors and furniture solutions to transform your space efficiently.
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-12">
