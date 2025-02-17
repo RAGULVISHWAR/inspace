@@ -31,6 +31,25 @@ const Home = () => {
     ["/images/clients/client-bg/bg-11.png", "/images/clients/client11.png"],
     ["/images/clients/client-bg/bg-12.png", "/images/clients/client12.png"],
   ];
+  const questions: [string, string][] = [
+    [
+      "What types of projects does Inspace handle?",
+      "We specialize in commercial interiors, including supermarkets, department stores, offices, and more. Our services cover everything from design consulting to manufacturing and installation."
+    ],
+    [
+      "Do you offer custom sizes and finishes for display racks?",
+      "Yes, we provide fully customizable display racks tailored to your specific size, material, and finish requirements to match your store’s aesthetics."
+    ],
+    [
+      "How long does it typically take to complete a project?",
+      "Project timelines vary based on scope and complexity, but most installations are completed within 4 to 8 weeks from design approval."
+    ],
+    [
+      "Can you handle large-scale orders and pan-India delivery?",
+      "Absolutely! We have the capacity to handle bulk orders and ensure timely delivery across India with our strong logistics network."
+    ]
+  ];
+
   return (
     <div className="home ">
       {/* div one Welcome text-[clamp(2rem,6vw,4.5rem)] text-base */}
@@ -151,7 +170,7 @@ const Home = () => {
               image.map((img, index) => {
                 return (
                   <Link href={img[2]} key={index}>
-                    <div className="relative w-full h-[250px] lg:h-[450px] xl:h-[700px] rounded-2xl overflow-hidden group">
+                    <div className="relative w-full h-[250px] lg:h-[450px] xl:h-[700px] rounded-2xl overflow-hidden group transition-transform transform duration-300 ease-in-out hover:scale-105  shadow-lg shadow-slate-600">
                       <Image
                         src={img[0]}
                         alt={img[1]}
@@ -230,7 +249,7 @@ const Home = () => {
         </div>
       </div>
       {/* div six caption */}
-      <div className="caption-div p-5 sm:p-7 md:p-9 lg:p-12">
+      <div className="caption-div p-5 sm:p-7 md:p-9 lg:p-12 space-y-10">
         <div className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5">
           <p className="rounded-full border border-primary p-2 px-6 w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
             Caption
@@ -242,23 +261,35 @@ const Home = () => {
             Still you have any questions? Contact our Team via <Link href={'support@inspacestore.in'} className="text-blue-500">support@inspacestore.in</Link>
           </p>
         </div>
-        <div>
+        <div className="bg-primaryLight rounded-md p-10 sm:mx-5 md:mx-10 lg:mx-20">
           <div>
-
+            <p className="text-[clamp(1rem,1.2vw,2.2rem)] font-semibold">
+              Category goes here
+            </p>
+            <p className="hidden md:block text-[clamp(0.9rem,1vw,1.2rem)]">
+              Lorem ipsum dolor sit amet consectetur. Sit et phasellus ullamcorper at.
+            </p>
           </div>
-          <div>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+          <div className="">
+            {
+              questions.map((q, index) => {
+                return (
+                  <Accordion type="single" collapsible className="w-full sm:pt-3 md:pt-6 lg:pt-10" key={index}>
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger className="text-[clamp(1rem,1.2vw,2.2rem)]">{q[0]}</AccordionTrigger>
+                      <AccordionContent className="text-[clamp(0.9rem,1vw,1.2rem)] lg:mr-9">
+                        {q[1]}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                );
+
+              })
+            }
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
