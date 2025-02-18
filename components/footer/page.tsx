@@ -19,8 +19,8 @@ const Footer = () => {
             <div className='hidden md:block'>
                 <Image src={logo} alt="logo" className="w-28 md:w-36 h-auto" />
             </div>
-            <div className="flex flex-col-reverse md:flex-row gap-5">
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pb-4 md:place-self-center">
+            <div className="flex flex-col-reverse md:flex-row justify-evenly">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4 pb-4 md:place-self-center md:w-2/4">
                     <div>
                         <div>
                             <p className="text-primary font-semibold">Info</p>
@@ -64,7 +64,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="p-4 bg-primary rounded-lg md:w-1/3 py-5">
+                <div className="p-4 bg-primary rounded-lg w-[400px] py-5 place-self-center m-3">
                     <div className="py-4 text-gray-600 ">
                         <p>
                             Seeking personalized support?

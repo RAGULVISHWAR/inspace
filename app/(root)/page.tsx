@@ -6,16 +6,16 @@ import { ArrowUpRight } from 'lucide-react';
 import Link from "next/link";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const Home = () => {
-  const image: [string, string, string][] = [
-    ["/images/saravana.png", "Saravana stores", "/"],
-    ["/images/house.png", "House of clothing", "/"],
-    ["/images/fresh.png", "The Fresh Basket", "/"],
-    ["/images/babies.png", "Born babies", "/"],
-    ["/images/kandhan.png", "Kandhan Stores", "/"],
-    ["/images/global.png", "Global wear", "/"],
-    ["/images/house-clothing.png", "House of clothing", "/"],
-    ["/images/silver.png", "Silver lady", "/"],
-    ["/images/station.png", "In station and out station 2", "/"],
+  const image: [string, string, string, string][] = [
+    ["1", "/images/saravana.png", "Saravana stores", "projects/1"],
+    ["2", "/images/house.png", "House of clothing", "projects/2"],
+    ["3", "/images/fresh.png", "The Fresh Basket", "projects/3"],
+    ["4", "/images/babies.png", "Born babies", "projects/4"],
+    ["5", "/images/kandhan.png", "Kandhan Stores", "projects/5"],
+    ["6", "/images/global.png", "Global wear", "projects/6"],
+    ["7", "/images/house-clothing.png", "House of clothing", "projects/7"],
+    ["8", "/images/silver.png", "Silver lady", "projects/8"],
+    ["9", "/images/station.png", "In station and out station", "projects/9"],
   ];
   const client: [string, string][] = [
     ["/images/clients/client-bg/bg-1.png", "/images/clients/client1.png"],
@@ -38,20 +38,28 @@ const Home = () => {
     ],
     [
       "Do you offer custom sizes and finishes for display racks?",
-      "Yes, we provide fully customizable display racks tailored to your specific size, material, and finish requirements to match your store’s aesthetics."
+      "Absolutely. All our fixtures and racks can be tailored to fit your space and aesthetic preferences—whether it&apos;s color, material, or overall design."
     ],
     [
       "How long does it typically take to complete a project?",
-      "Project timelines vary based on scope and complexity, but most installations are completed within 4 to 8 weeks from design approval."
+      "The timeline depends on the project scope. After an initial consultation, we provide a detailed plan with clear milestones, ensuring transparency from start to finish."
     ],
     [
       "Can you handle large-scale orders and pan-India delivery?",
-      "Absolutely! We have the capacity to handle bulk orders and ensure timely delivery across India with our strong logistics network."
+      "Yes. Our logistics network enables us to deliver and install across India, so we can easily manage multiple locations or large retail chains."
+    ],
+    [
+      "What if I need to update or reconfigure my fixtures later?",
+      "Our solutions are modular, so you can easily add, remove, or rearrange components to adapt to changing inventory or layout needs."
+    ],
+    [
+      "How do I get started with an Inspace project?",
+      " Simply reach out to our team with your requirements. We&apos;ll set up a consultation, discuss your vision, and propose a tailored solution to meet your goals."
     ]
   ];
 
   return (
-    <div className="home ">
+    <div className="home">
       {/* div one Welcome text-[clamp(2rem,6vw,4.5rem)] text-base */}
       <div className="welcome-div relative w-full h-screen">
         <Image src={home} alt="home" fill className="object-cover object-center" />
@@ -169,11 +177,11 @@ const Home = () => {
             {image?.length > 0 &&
               image.map((img, index) => {
                 return (
-                  <Link href={img[2]} key={index}>
+                  <Link href={img[3]} key={index}>
                     <div className="relative w-full h-[250px] lg:h-[450px] xl:h-[700px] rounded-2xl overflow-hidden group transition-transform transform duration-300 ease-in-out hover:scale-105  shadow-lg shadow-slate-600">
                       <Image
-                        src={img[0]}
-                        alt={img[1]}
+                        src={img[1]}
+                        alt={img[2]}
                         fill
                         className="object-cover transition-transform transform duration-300 ease-in-out group-hover:scale-110"
                       />
@@ -182,10 +190,10 @@ const Home = () => {
                         <ArrowUpRight className="text-white xl:size-10" />
                       </div>
                       <p className="opacity-100 absolute bottom-0 left-0 text-white text-[clamp(1.2rem,1.5vw,3.5rem)] p-3 sm:p-5 md:p-7 font-semibold text-center transition-opacity duration-300 ease-out group-hover:opacity-0">
-                        {img[1]}
+                        {img[2]}
                       </p>
                       <p className="opacity-0 absolute top-1/2 left-1/4 text-white text-[clamp(1.2rem,1.5vw,3.5rem)] p-3 sm:p-5 md:p-7 font-semibold text-center transition-opacity duration-500 ease-out group-hover:opacity-100">
-                        {img[1]}
+                        {img[2]}
                       </p>
                     </div>
                   </Link>
