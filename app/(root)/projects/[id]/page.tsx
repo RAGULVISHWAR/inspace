@@ -1,3 +1,5 @@
+import SuggestionProjects from "@/components/suggestion/page";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { datas } from "@/db/datas";
 import Image from "next/image";
 
@@ -55,7 +57,31 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
                 <p className="text-[clamp(1rem,1.2vw,2rem)] text-gray-800 font-medium">{project?.outcome}</p>
             </div>
             <div>
-
+                <ScrollArea className="w-full rounded-md p-2  overflow-x-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-gray-200">
+                    <div className="flex gap-3 lg:gap-6 px-1 py-2 md:px-2 ">
+                        {project?.project_img.slice(5, 10).map((img, index) => {
+                            return (
+                                <div key={index} className="relative w-[200px] h-[300px] sm:w-[400px] sm:h-[600px] lg:w-[570px] lg:h-[800px] rounded-lg md:rounded-xl overflow-hidden">
+                                    <Image src={img as string} alt="rack" fill className="object-cover" />
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <ScrollBar orientation="horizontal" className="bg-primaryLight" />
+                </ScrollArea>
+            </div>
+            <div>
+                <div>
+                    <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold text-primary">
+                        For More
+                    </p>
+                    <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
+                        We provide world-class solutions that help you 10x your speed.
+                    </p>
+                </div>
+                <div>
+                    <SuggestionProjects selectedProjectId={project?.id as string} />
+                </div>
             </div>
             <div className=" relative w-full h-[500px] md:h-screen rounded-lg overflow-hidden">
                 <Image src={"/images/form.png"} alt="form" fill className="object-cover" />
