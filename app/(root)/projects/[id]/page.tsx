@@ -29,12 +29,12 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
                     <Image src={project?.project_img[0] as string} alt={project?.name as string} fill className="object-cover" />
                 </div>
             </div>
-            <div className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+            <div className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 gap-y-2 md:gap-y-4">
                 <p className="text-primary text-[clamp(1.5rem,2vw,4rem)] font-semibold">
                     Inspace&apos;s Solution
                 </p>
                 <p className="text-[clamp(1rem,1.2vw,2rem)] text-gray-800 font-medium">{project?.solution}</p>
-                <div className="grid grid-cols-1 md:grid-cols-11 md:grid-rows-4 gap-2 md:gap-5 w-full md:h-screen">
+                <div className="grid grid-cols-1 md:grid-cols-11 md:grid-rows-4 gap-2 md:gap-5 w-full md:h-screen  gap-y-2 md:gap-y-4">
                     {cls.map((img, index) => (
                         <div
                             key={index}
@@ -50,13 +50,13 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
                     ))}
                 </div>
             </div>
-            <div className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+            <div className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10  gap-y-2 md:gap-y-4">
                 <p className="text-primary text-[clamp(1.5rem,2vw,4rem)] font-semibold">
                     Outcomes
                 </p>
                 <p className="text-[clamp(1rem,1.2vw,2rem)] text-gray-800 font-medium">{project?.outcome}</p>
             </div>
-            <div>
+            <div className=" gap-y-2 md:gap-y-4">
                 <ScrollArea className="w-full rounded-md p-2  overflow-x-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-gray-200">
                     <div className="flex gap-3 lg:gap-6 px-1 py-2 md:px-2 ">
                         {project?.project_img.slice(5, 10).map((img, index) => {
@@ -70,7 +70,7 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
                     <ScrollBar orientation="horizontal" className="bg-primaryLight" />
                 </ScrollArea>
             </div>
-            <div>
+            <div className=" gap-y-2 md:gap-y-4">
                 <div>
                     <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold text-primary">
                         For More

@@ -14,7 +14,7 @@ const Header = () => {
                     <Image src={logo} alt="logo" className="w-28 md:w-36 h-auto" />
                 </div>
                 <nav className="hidden sm:flex items-center space-x-4 md:space-x-8 lg:space-x-12 ">
-                    {[['Home', '/'], ['About Us', '/'], ['Projects', '/'], ['Insights', '/']].map((item, index) => (
+                    {[['Home', '/'], ['About Us', '/'], ['Projects', '/projects/1'], ['Insights', '/']].map((item, index) => (
                         <Link href={item[1]} key={index}>
                             <div className="relative group text-primary hover:text-gray-600 text-sm md:text-base lg:text-lg font-bold">
                                 <p>{item[0]}</p>
