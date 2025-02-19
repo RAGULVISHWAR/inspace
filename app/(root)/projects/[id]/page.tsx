@@ -49,7 +49,7 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
                 </div>
             </div>
             <div className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
-                <p className="text-primary text-[clamp(1rem,2vw,4rem)] font-semibold">
+                <p className="text-primary text-[clamp(1.5rem,2vw,4rem)] font-semibold">
                     Outcomes
                 </p>
                 <p className="text-[clamp(1rem,1.2vw,2rem)] text-gray-800 font-medium">{project?.outcome}</p>
