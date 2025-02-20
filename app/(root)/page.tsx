@@ -178,7 +178,7 @@ const Home = () => {
               image.map((img, index) => {
                 return (
                   <Link href={img[3]} key={index}>
-                    <div className="relative w-full h-[250px] lg:h-[450px] xl:h-[700px] rounded-2xl overflow-hidden group transition-transform transform duration-300 ease-in-out hover:scale-105  shadow-lg shadow-slate-600">
+                    <div className="relative w-full h-[250px] lg:h-[450px] xl:h-[700px] rounded-2xl overflow-hidden group transition-transform transform duration-300 ease-in-out hover:scale-105  shadow-sm shadow-slate-600">
                       <Image
                         src={img[1]}
                         alt={img[2]}
