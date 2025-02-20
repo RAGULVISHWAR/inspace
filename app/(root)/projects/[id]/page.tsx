@@ -42,7 +42,7 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
                     {cls.map((img, index) => (
                         <div
                             key={index}
-                            className={`relative flex overflow-hidden h-[250px] md:h-auto rounded-xl md:rounded-2xl ${img[1]} shadow-gray-700 shadow-sm`}
+                            className={`relative flex overflow-hidden h-[250px] md:h-auto rounded-xl md:rounded-2xl ${img[1]} shadow-gray-400 shadow-sm`}
                         >
                             <Image
                                 src={img[0] as string}

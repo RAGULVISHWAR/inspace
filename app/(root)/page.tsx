@@ -85,7 +85,7 @@ const Home = () => {
       </div>
       {/* div two Achievements text-[clamp(3.5rem,9vw,6.5rem)] */}
       <div className="achievements-div grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 p-3 sm:p-5 md:p-7 lg:p-9">
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary shadow-md shadow-gray-600">
+        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary shadow-md shadow-gray-400">
           <div className="text-[clamp(3.5rem,9vw,6.5rem)] font-light">
             <Counter target={38} plus="+" />
           </div>
@@ -95,7 +95,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary shadow-md shadow-gray-600">
+        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary shadow-md shadow-gray-400">
           <div className="text-[clamp(3.5rem,9vw,6.5rem)] font-light">
             <Counter target={1200} plus="+" />
           </div>
@@ -105,7 +105,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary col-span-2 md:col-span-1 shadow-md shadow-gray-600">
+        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary col-span-2 md:col-span-1 shadow-md shadow-gray-400">
           <div className="text-[clamp(3.5rem,9vw,6.5rem)] font-light">
             <Counter target={7} />
           </div>
@@ -269,7 +269,7 @@ const Home = () => {
             Still you have any questions? Contact our Team via <Link href={'support@inspacestore.in'} className="text-blue-500">support@inspacestore.in</Link>
           </p>
         </div>
-        <div className="bg-primaryLight rounded-md p-10 sm:mx-5 md:mx-10 lg:mx-20 shadow-md shadow-gray-600">
+        <div className="bg-primaryLight rounded-md p-10 sm:mx-5 md:mx-10 lg:mx-20 shadow-md shadow-gray-400">
           <div>
             <p className="text-[clamp(1rem,1.2vw,2.2rem)] font-semibold">
               Category goes here
