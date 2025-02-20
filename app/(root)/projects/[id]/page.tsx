@@ -22,7 +22,7 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
     ]
 
     return (
-        <div className="w-full  mt-16 md:px-10 lg:px-20 space-y-5 sm:space-y-7 md:space-y-10 lg:space-y-15">
+        <div className="w-full  mt-16 px-4 md:px-10 lg:px-20 space-y-5 sm:space-y-7 md:space-y-10 lg:space-y-15">
             {/* div one */}
             <div className="flex flex-col p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 gap-2 md:gap-7">
                 <p className="text-primary text-[clamp(1.7rem,2.5vw,4.5rem)] font-semibold">{project?.name}</p>
