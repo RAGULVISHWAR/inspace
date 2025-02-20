@@ -85,7 +85,7 @@ const Home = () => {
       </div>
       {/* div two Achievements text-[clamp(3.5rem,9vw,6.5rem)] */}
       <div className="achievements-div grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 p-3 sm:p-5 md:p-7 lg:p-9">
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary">
+        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary shadow-md shadow-gray-600">
           <div className="text-[clamp(3.5rem,9vw,6.5rem)] font-light">
             <Counter target={38} plus="+" />
           </div>
@@ -95,7 +95,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary">
+        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary shadow-md shadow-gray-600">
           <div className="text-[clamp(3.5rem,9vw,6.5rem)] font-light">
             <Counter target={1200} plus="+" />
           </div>
@@ -105,7 +105,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary col-span-2 md:col-span-1">
+        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary col-span-2 md:col-span-1 shadow-md shadow-gray-600">
           <div className="text-[clamp(3.5rem,9vw,6.5rem)] font-light">
             <Counter target={7} />
           </div>
@@ -128,29 +128,29 @@ const Home = () => {
             At Inspace, we craft innovative interiors and furniture solutions to transform your space efficiently.
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-12">
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-12 ">
+          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] shadow-md shadow-gray-600">
             <p className="font-semibold">#01</p>
             <p className="font-semibold">Tailored & Modular Solutions</p>
             <p className="text-base md:text-lg">
               We believe every brand has its own story. Our modular systems and custom displays let you shape your space exactly the way you envision without compromise.
             </p>
           </div>
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)]">
+          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] shadow-md shadow-gray-600">
             <p className="font-semibold">#02</p>
             <p className="font-semibold">Unmatched Quality & Durability</p>
             <p className="text-base md:text-lg">
               Our products are built to last, using premium materials and rigorous manufacturing processes. Enjoy peace of mind with extended warranties that safeguard your investment.
             </p>
           </div>
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)]">
+          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] shadow-md shadow-gray-600">
             <p className="font-semibold">#03</p>
             <p className="font-semibold">Nationwide Delivery & On-Site Support</p>
             <p className="text-base md:text-lg">
               Wherever you are, our dedicated logistics network ensures prompt delivery and hassle-free installation. Plus, our expert support team is just a call away to handle any requirements.
             </p>
           </div>
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)]">
+          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] shadow-md shadow-gray-600">
             <p className="font-semibold">#04</p>
             <p className="font-semibold">Customer-Centric Partnership</p>
             <p className="text-base md:text-lg">
@@ -269,7 +269,7 @@ const Home = () => {
             Still you have any questions? Contact our Team via <Link href={'support@inspacestore.in'} className="text-blue-500">support@inspacestore.in</Link>
           </p>
         </div>
-        <div className="bg-primaryLight rounded-md p-10 sm:mx-5 md:mx-10 lg:mx-20">
+        <div className="bg-primaryLight rounded-md p-10 sm:mx-5 md:mx-10 lg:mx-20 shadow-md shadow-gray-600">
           <div>
             <p className="text-[clamp(1rem,1.2vw,2.2rem)] font-semibold">
               Category goes here
