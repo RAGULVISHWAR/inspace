@@ -26,7 +26,7 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
             <div className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
                 <p className="text-primary text-[clamp(1.7rem,2.5vw,4.5rem)] font-semibold">{project?.name}</p>
                 <div className="relative w-full h-[500px] md:h-screen rounded-2xl overflow-hidden">
-                    <Image src={project?.project_img[0] as string} alt={project?.name as string} fill className="object-cover" />
+                    <Image src={project?.project_img[0] as string} alt={project?.name as string} fill className="object-cover" priority />
                 </div>
             </div>
             <div className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 gap-y-2 md:gap-y-4">
@@ -45,6 +45,7 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
                                 alt={`Project Image ${index + 1}`}
                                 fill
                                 className="object-cover"
+                                priority
                             />
                         </div>
                     ))}
