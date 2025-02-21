@@ -86,31 +86,31 @@ const Home = () => {
       {/* div two Achievements text-[clamp(3.5rem,9vw,6.5rem)] */}
       <div className="achievements-div grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 p-3 sm:p-5 md:p-7 lg:p-9">
         <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary shadow-md shadow-gray-400">
-          <div className="text-[clamp(3.5rem,9vw,6.5rem)] font-light">
-            <Counter target={38} plus="+" />
+          <div>
+            <Counter target={38} plus="+" classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
           </div>
           <p className="text-lg md:text-xl">Years</p>
-          <div className="absolute top-0 right-0 rounded-full p-2 sm:p-3 lg:p-6 bg-primary m-3 sm:m-4 lg:m-6">
+          <div className="absolute top-0 right-0 rounded-full p-2 bg-primary m-3 sm:m-4 lg:m-6">
             <ArrowUpRight className="text-white" />
           </div>
         </div>
 
         <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary shadow-md shadow-gray-400">
-          <div className="text-[clamp(3.5rem,9vw,6.5rem)] font-light">
-            <Counter target={1200} plus="+" />
+          <div>
+            <Counter target={1200} plus="+" classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
           </div>
           <p className="text-lg md:text-xl">Projects Completed</p>
-          <div className="absolute top-0 right-0 rounded-full p-2 sm:p-3 lg:p-6 bg-primary m-3 sm:m-4 lg:m-6">
+          <div className="absolute top-0 right-0 rounded-full p-2  bg-primary m-3 sm:m-4 lg:m-6">
             <ArrowUpRight className="text-white" />
           </div>
         </div>
 
         <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary col-span-2 md:col-span-1 shadow-md shadow-gray-400">
-          <div className="text-[clamp(3.5rem,9vw,6.5rem)] font-light">
-            <Counter target={7} />
+          <div>
+            <Counter target={7} classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
           </div>
           <p className="text-lg md:text-xl">Operating Location</p>
-          <div className="absolute top-0 right-0 rounded-full p-2 sm:p-3 lg:p-6 bg-primary m-3 sm:m-4 lg:m-6">
+          <div className="absolute top-0 right-0 rounded-full p-2  bg-primary m-3 sm:m-4 lg:m-6">
             <ArrowUpRight className="text-white" />
           </div>
         </div>
