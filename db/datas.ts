@@ -1,4 +1,63 @@
 export const datas = {
+    teams: [
+        {
+            name: "Member1",
+            role: "role",
+            twitter: "https://x.com/",
+            linkedin: "https://www.linkedin.com/",
+            pic: "/images/member1.jpg"
+        },
+        {
+            name: "Member2",
+            role: "role",
+            twitter: "https://x.com/",
+            linkedin: "https://www.linkedin.com/",
+            pic: "/images/member2.jpg"
+        },
+        {
+            name: "Member3",
+            role: "role",
+            twitter: "https://x.com/",
+            linkedin: "https://www.linkedin.com/",
+            pic: "/images/member1.jpg"
+        },
+        {
+            name: "Member4",
+            role: "role",
+            twitter: "https://x.com/",
+            linkedin: "https://www.linkedin.com/",
+            pic: "/images/member2.jpg"
+        },
+        {
+            name: "Member5",
+            role: "role",
+            twitter: "https://x.com/",
+            linkedin: "https://www.linkedin.com/",
+            pic: "/images/member1.jpg"
+        },
+        {
+            name: "Member6",
+            role: "role",
+            twitter: "https://x.com/",
+            linkedin: "https://www.linkedin.com/",
+            pic: "/images/member2.jpg"
+        },
+        {
+            name: "Member7",
+            role: "role",
+            twitter: "https://x.com/",
+            linkedin: "https://www.linkedin.com/",
+            pic: "/images/member1.jpg"
+        },
+        {
+            name: "Member8",
+            role: "role",
+            twitter: "https://x.com/",
+            linkedin: "https://www.linkedin.com/",
+            pic: "/images/member2.jpg"
+        },
+
+    ],
     projects: [
         {
             id: "1",
