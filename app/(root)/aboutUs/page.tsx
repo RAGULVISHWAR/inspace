@@ -192,6 +192,17 @@ const AboutUS = () => {
                     </div>
                 </div>
             </div>
+            <div>
+                <div>
+                    <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold text-primary">
+                        Explore Our Factory
+                    </p>
+                    <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
+                        Save your Irreplaceable time by using our Components with No Compromise on Design.
+                    </p>
+                </div>
+                <div></div>
+            </div>
             <div className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
                 <div className=" relative w-full h-[500px] md:h-screen rounded-lg overflow-hidden">
                     <Image src={"/images/form.png"} alt="form" fill className="object-cover" />
