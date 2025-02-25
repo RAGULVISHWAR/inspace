@@ -26,7 +26,7 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
             {/* div one */}
             <div className="flex flex-col p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 gap-2 md:gap-7">
                 <p className="text-primary text-[clamp(1.7rem,2.5vw,4.5rem)] font-semibold">{project?.name}</p>
-                <div className="relative w-full h-[500px] md:h-screen rounded-2xl overflow-hidden">
+                <div className="relative w-full h-[350px] md:h-screen rounded-md md:rounded-xl overflow-hidden">
                     <Image src={project?.project_img[0] as string} alt={project?.name as string} fill className="object-cover" priority />
                 </div>
             </div>
@@ -38,11 +38,11 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
                     </p>
                     <p className="text-[clamp(1rem,1.2vw,2rem)] text-gray-800 font-medium">{project?.solution}</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-11 md:grid-rows-4 gap-2 md:gap-5 w-full md:h-[800px]  gap-y-2 md:gap-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-11 md:grid-rows-4 gap-2 md:gap-5 w-full md:h-screen  gap-y-2 md:gap-y-4">
                     {cls.map((img, index) => (
                         <div
                             key={index}
-                            className={`relative flex overflow-hidden h-[250px] md:h-auto rounded-xl md:rounded-2xl ${img[1]} shadow-gray-400 shadow-sm`}
+                            className={`relative flex overflow-hidden h-[250px] md:h-auto rounded-xl md:rounded-2xl ${img[1]} shadow-gray-400 shadow-sm `}
                         >
                             <Image
                                 src={img[0] as string}
@@ -51,6 +51,7 @@ const Project = async (props: { params: Promise<{ id: string }> }) => {
                                 className="object-cover transition-hover duration-300 ease-in-out transform hover:scale-105"
                                 priority
                             />
+                            <div className="absolute inset-0 bg-black/40 opacity-50"></div>
                         </div>
                     ))}
                 </div>

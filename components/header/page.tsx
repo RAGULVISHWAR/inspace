@@ -13,7 +13,7 @@ const Header = () => {
                 <div>
                     <Image src={logo} alt="logo" className="w-28 md:w-36 h-auto" />
                 </div>
-                <nav className="hidden sm:flex items-center space-x-4 md:space-x-8 lg:space-x-12 ">
+                <nav className="hidden lg:flex items-center space-x-4 md:space-x-8 lg:space-x-12 ">
                     {[['Home', '/'], ['About Us', '/aboutUs'], ['Projects', '/projects/1'], ['Insights', '/blogs']].map((item, index) => (
                         <Link href={item[1]} key={index}>
                             <div className="relative group text-primary hover:text-gray-600 text-sm md:text-base lg:text-lg font-bold">
@@ -23,7 +23,7 @@ const Header = () => {
                         </Link>
                     ))}
                 </nav>
-                <div className="hidden sm:flex space-x-4">
+                <div className="hidden lg:flex space-x-4">
                     <div className="bg-[#4A044E] p-2 rounded-md">
                         <Mail fill="#F5D0FE" color="#4A044E" />
                     </div>
@@ -38,7 +38,7 @@ const Header = () => {
 
 
                 </div>
-                <div className='sm:hidden'>
+                <div className='lg:hidden'>
                     <Sheet >
                         <SheetTrigger asChild>
                             <Menu className='text-primary' />

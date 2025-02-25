@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import home from "@/public/images/home-img.png"
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,7 @@ import { Counter } from "../../components/Animations/counter";
 import { ArrowUpRight } from 'lucide-react';
 import Link from "next/link";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { motion } from "framer-motion"
 const Home = () => {
   const image: [string, string, string, string][] = [
     ["1", "/images/saravana.png", "Saravana stores", "projects/1"],
@@ -59,16 +61,26 @@ const Home = () => {
   ];
 
   return (
-    <div className="home">
+    <div className="home mt-20">
       {/* div one Welcome text-[clamp(2rem,6vw,4.5rem)] text-base */}
       <div className="welcome-div relative w-full h-screen">
         <Image src={home} alt="home" fill className="object-cover object-center" />
         <div className="absolute left-0 bottom-0 w-full p-5 mb-16 md:p-10 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-          <div className="text-white font-medium text-[clamp(2rem,6vw,4.5rem)]">
+          <motion.div
+            initial={{ opacity: 0, y: -70 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} // Triggers only the first time it enters the viewport
+            transition={{ duration: 1 }}
+            className="text-white font-medium text-[clamp(2rem,6vw,4.5rem)]">
             <p>INSPACE RETAIL</p>
             <p>DISPLAYS FOR SHOP</p>
-          </div>
-          <div className="space-y-4">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 70 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} // Triggers only the first time it enters the viewport
+            transition={{ duration: 1 }}
+            className="space-y-4">
             <div className="text-gray-100 text-base sm:text-lg max-w-md">
               We use modern techniques to boost sustainable farming and protect the environment.
             </div>
@@ -80,12 +92,12 @@ const Home = () => {
                 Know More
               </Button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       {/* div two Achievements text-[clamp(3.5rem,9vw,6.5rem)] */}
       <div className="achievements-div grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 p-3 sm:p-5 md:p-7 lg:p-9">
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary shadow-md shadow-gray-400">
+        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary ">
           <div>
             <Counter target={38} plus="+" classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
           </div>
@@ -95,7 +107,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary shadow-md shadow-gray-400">
+        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary ">
           <div>
             <Counter target={1200} plus="+" classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
           </div>
@@ -105,7 +117,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary col-span-2 md:col-span-1 shadow-md shadow-gray-400">
+        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary col-span-2 md:col-span-1 ">
           <div>
             <Counter target={7} classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
           </div>
@@ -128,29 +140,30 @@ const Home = () => {
             At Inspace, we craft innovative interiors and furniture solutions to transform your space efficiently.
           </div>
         </div>
+        {/*  */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-12 ">
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] shadow-md shadow-gray-600">
+          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] ">
             <p className="font-semibold">#01</p>
             <p className="font-semibold">Tailored & Modular Solutions</p>
             <p className="text-base md:text-lg">
               We believe every brand has its own story. Our modular systems and custom displays let you shape your space exactly the way you envision without compromise.
             </p>
           </div>
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] shadow-md shadow-gray-600">
+          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] ">
             <p className="font-semibold">#02</p>
             <p className="font-semibold">Unmatched Quality & Durability</p>
             <p className="text-base md:text-lg">
               Our products are built to last, using premium materials and rigorous manufacturing processes. Enjoy peace of mind with extended warranties that safeguard your investment.
             </p>
           </div>
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] shadow-md shadow-gray-600">
+          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] ">
             <p className="font-semibold">#03</p>
             <p className="font-semibold">Nationwide Delivery & On-Site Support</p>
             <p className="text-base md:text-lg">
               Wherever you are, our dedicated logistics network ensures prompt delivery and hassle-free installation. Plus, our expert support team is just a call away to handle any requirements.
             </p>
           </div>
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] shadow-md shadow-gray-600">
+          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] ">
             <p className="font-semibold">#04</p>
             <p className="font-semibold">Customer-Centric Partnership</p>
             <p className="text-base md:text-lg">
@@ -178,7 +191,7 @@ const Home = () => {
               image.map((img, index) => {
                 return (
                   <Link href={img[3]} key={index}>
-                    <div className="relative w-full h-[250px] lg:h-[450px] xl:h-[700px] rounded-2xl overflow-hidden group transition-transform transform duration-300 ease-in-out hover:scale-105  shadow-sm shadow-slate-600">
+                    <div className="relative w-full h-[250px] lg:h-[400px] xl:h-[500px] rounded-xl overflow-hidden group transition-transform transform duration-300 ease-in-out hover:scale-105">
                       <Image
                         src={img[1]}
                         alt={img[2]}
@@ -220,7 +233,7 @@ const Home = () => {
             {
               client?.length > 0 && client.map((ct, index) => {
                 return (
-                  <div key={index} className="relative w-full h-[100px] md:h-[250px] rounded-2xl overflow-hidden group  shadow-md md:shadow-lg shadow-black md:shadow-black">
+                  <div key={index} className="relative w-full h-[100px] md:h-[250px] rounded-2xl overflow-hidden group">
                     <Image
                       src={ct[0]}
                       alt={`${index}`}
@@ -269,7 +282,7 @@ const Home = () => {
             Still you have any questions? Contact our Team via <Link href={'support@inspacestore.in'} className="text-blue-500">support@inspacestore.in</Link>
           </p>
         </div>
-        <div className="bg-primaryLight rounded-md p-10 sm:mx-5 md:mx-10 lg:mx-20 shadow-md shadow-gray-400">
+        <div className="bg-primaryLight rounded-md p-10 sm:mx-5 md:mx-10 lg:mx-20 ">
           <div>
             <p className="text-[clamp(1rem,1.2vw,2.2rem)] font-semibold">
               Category goes here
