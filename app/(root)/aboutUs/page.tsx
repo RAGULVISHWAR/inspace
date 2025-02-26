@@ -247,19 +247,19 @@ const AboutUS = () => {
                     <div className="flex flex-col gap-5 md:gap-7 lg:gap-14">
                         {userj.map((user, index) => {
                             return (
-                                <div key={index} className={`flex flex-col gap-5 md:gap-7 lg:gap-14 place-items-center ${(index + 1) % 2 === 0 ? "md:flex-row-reverse" : "md:flex"}`}>
-                                    <div className="flex gap-2">
-                                        <div className="font-semibold text-[clamp(1.2rem,1.8vw,3.5rem)]">
+                                <div key={index} className={`flex flex-col gap-5 md:gap-7 lg:gap-14 place-items-center ${(index + 1) % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"}`}>
+                                    <div className="flex w-1/2 md:w-1/6 gap-2 place-self-start md:place-self-center">
+                                        <div className="font-bold text-[clamp(2rem,2.8vw,3.5rem)] place-self-center">
                                             {user.sno}
                                         </div>
-                                        <div className="text-gray-700 font-medium text-[clamp(1rem,1.5vw,2.5rem)]] place-content-center h-fit">
+                                        <div className="text-gray-700 font-semibold text-[clamp(1rem,1.5vw,2.5rem)]] place-self-center h-fit line-clamp-2">
                                             {user.name}
                                         </div>
                                     </div>
-                                    <div className="text-[clamp(0.8rem,1vw,1.5rem)]">
+                                    <div className="text-[clamp(0.8rem,1vw,1.5rem)] md:w-3/6 font-medium">
                                         {user.desc}
                                     </div>
-                                    <div className="relative overflow-hidden rounded-md w-full h-[250px] md:h-[400px]">
+                                    <div className="relative overflow-hidden rounded-md w-full h-[250px] md:h-[400px] md:w-2/6">
                                         <Image src={user.img} alt={user.name} fill className="object-cover" />
                                     </div>
                                 </div>
