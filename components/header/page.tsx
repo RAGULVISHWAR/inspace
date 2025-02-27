@@ -53,7 +53,7 @@ const Header = () => {
                                 <SheetTitle></SheetTitle>
                             </SheetHeader>
                             <div className='flex flex-col space-y-5 p-4'>
-                                {[['Home', '/'], ['About Us', '/aboutUs'], ['Projects', '/projects/1'], ['Insights', '/blogs']].map((item, index) => (
+                                {[['Home', '/'], ['About Us', '/aboutUs'], ['Projects', '/projects/1'], ['Insights', '/blogs'], ['ContactUs', '/contactUs']].map((item, index) => (
                                     <Link href={item[1]} key={index}>
                                         <SheetClose asChild>
                                             <div className="relative group text-primary hover:text-gray-600 text-xl font-bold">

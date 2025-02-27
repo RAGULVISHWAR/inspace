@@ -71,8 +71,8 @@ const AboutUS = () => {
                     </motion.div>
                 </div>
             </div>
-            <div className="px-4 md:px-10 lg:px-20 space-y-5 sm:space-y-7 md:space-y-10 lg:space-y-16" >
-                <div className="flex flex-col-reverse md:flex-row space-y-5 md:space-y-10 lg:space-y-16 space-x-5 md:space-x-10 lg:space-x-15 ">
+            <div className="px-4 md:px-10 lg:px-20 flex flex-col gap-16 md:gap-24" >
+                <div className="Attention flex flex-col-reverse md:flex-row gap-10 md:gap-20 ">
                     <div className="space-y-5 md:space-y-10 lg:space-y-16">
                         <p className="text-[clamp(2rem,3vw,4rem)] text-black font-semibold">
                             Attention and Maximum Attention to Detail
@@ -95,7 +95,7 @@ const AboutUS = () => {
                         />
                     </div>
                 </div>
-                <div className="space-y-5 md:space-y-10 lg:space-y-16">
+                <div className="Teem space-y-5 md:space-y-10 lg:space-y-16">
                     <div className="space-y-2 md:space-y-5 lg:space-y-7">
                         <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center  text-primary font-semibold">
                             Meet Our Team
@@ -206,16 +206,16 @@ const AboutUS = () => {
                         </div>
                     </div>
                 </div>
-                <div className="vission-mission space-y-5 md:space-y-10 lg:space-y-16">
+                <div className="Vission-mission space-y-5 md:space-y-10 lg:space-y-16">
                     <div className="flex-row  md:flex  md:gap-20 lg:gap-24 p-2 sm:p-3 lg:p-5">
                         <div className="relative w-full h-[250px] md:w-1/2 md:h-[400px] overflow-hidden rounded-md">
                             <Image src={'/images/mission.png'} alt="mission" fill className="object-contain" />
                         </div>
                         <div className="w-full md:w-1/2 pt-2 md:pt-5 space-y-2 md:space-y-5 lg:space-y-7">
-                            <p className="font-semibold">
+                            <p className="font-bold text-[clamp(2rem,2.8vw,3.5rem)]">
                                 Our Mission
                             </p>
-                            <p className="text-gray-600">
+                            <p className="text-gray-600 text-[clamp(0.8rem,1vw,1.5rem)] font-medium">
                                 To redefine retail spaces with smart, functional, and visually appealing display solutions, helping businesses create engaging shopping experiences that drive customer satisfaction and sales.
                             </p>
                         </div>
@@ -225,26 +225,26 @@ const AboutUS = () => {
                             <Image src={'/images/vision.png'} alt="mission" fill className="object-contain" />
                         </div>
                         <div className="w-full md:w-1/2 pt-2 md:pt-5 space-y-2 md:space-y-5 lg:space-y-7">
-                            <p className="font-semibold">
+                            <p className="font-bold text-[clamp(2rem,2.8vw,3.5rem)]">
                                 Our Vission
                             </p>
-                            <p className="text-gray-600">
+                            <p className="text-gray-600 text-[clamp(0.8rem,1vw,1.5rem)] font-medium">
                                 To be a leading provider of retail interiors, setting new industry standards with cutting-edge design, sustainable practices, and innovative solutions that empower brands to succeed in an evolving marketplace.
                                 At Inspace, we don&apos;t just build fixtures—we create impactful retail experiences that bring brands to life
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="space-y-5 md:space-y-10 lg:space-y-16">
+                <div className="Journey flex flex-col gap-10 md:gap-20">
                     <div className="space-y-2 md:space-y-5 lg:space-y-7">
-                        <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold text-primary">
+                        <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-bold text-primary">
                             User Journey
                         </p>
-                        <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
+                        <p className="hidden md:flex text-[clamp(1rem,1.2vw,2rem)] font-medium text-center text-gray-700">
                             At Inspace, we bring your retail vision to life with a seamless and structured process. From design to installation, we take care of every detail to ensure your store is both functional and visually stunning. Here&apos;s how we make it happen:
                         </p>
                     </div>
-                    <div className="flex flex-col gap-5 md:gap-7 lg:gap-14">
+                    <div className="flex flex-col gap-10 lg:gap-20">
                         {userj.map((user, index) => {
                             return (
                                 <div key={index} className={`flex flex-col gap-5 md:gap-7 lg:gap-14 place-items-center ${(index + 1) % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"}`}>
@@ -269,12 +269,12 @@ const AboutUS = () => {
 
                     </div>
                 </div>
-                <div className="factory space-y-5 md:space-y-10 lg:space-y-16">
+                <div className="Factory flex flex-col gap-10 md:gap-20">
                     <div className="space-y-2 md:space-y-5 lg:space-y-7">
-                        <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold text-primary">
+                        <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-bold text-primary">
                             Explore Our Factory
                         </p>
-                        <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
+                        <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700 font-medium">
                             Save your Irreplaceable time by using our Components with No Compromise on Design.
                         </p>
                     </div>
@@ -294,7 +294,7 @@ const AboutUS = () => {
                         </Carousel>
                     </div>
                 </div>
-                <div className="award rounded-lg border-2 border-black/50 w-full p-3 md:p-5 lg:p-10 space-y-5 md:space-y-10 lg:space-y-16 ">
+                <div className="Award rounded-lg border-2 border-black/50 w-full p-3 md:p-5 lg:p-10 space-y-5 md:space-y-10 lg:space-y-16 ">
                     <div className="place-self-center">
                         <p className="font-semibold text-[clamp(1.2rem,1.8vw,3.5rem)]" >
                             The Story Behind Our
@@ -315,7 +315,7 @@ const AboutUS = () => {
                         </div>
                     </div>
                 </div>
-                <div className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+                <div className="Form p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
                     <div className=" relative w-full h-[500px] md:h-screen rounded-lg overflow-hidden">
                         <Image src={"/images/form.png"} alt="form" fill className="object-cover" />
                         <div>
