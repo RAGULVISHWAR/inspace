@@ -18,7 +18,7 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7, // Longer duration
+      duration: 0.5, // Longer duration
       ease: "easeInOut", // Different easing
     },
   },
@@ -356,7 +356,7 @@ const Home = () => {
 function MotionSection({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
-    once: false, // Repeat animation
+    once: true, // Repeat animation
     margin: "0px 0px -200px 0px", // Trigger earlier
     amount: 0.1, // Trigger when 20% visible
   });

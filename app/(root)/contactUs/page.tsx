@@ -11,27 +11,29 @@ import { useRef } from "react";
 
 const ContactUs = () => {
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1, // Stagger each child by 0.1s
-            },
-        },
-    };
-
     const itemVariants = {
         hidden: {
             opacity: 0,
-            y: 50,
+            y: 75, // Start further down
         },
         visible: {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 0.5,
-                ease: "easeOut",
+                duration: 0.5, // Longer duration
+                ease: "easeInOut", // Different easing
+            },
+        },
+    };
+
+    // Modify stagger effect
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2, // Increase stagger
+                delayChildren: 0.1, // Add initial delay
             },
         },
     };
@@ -254,8 +256,9 @@ const ContactUs = () => {
 function MotionSection({ children, className }: { children: React.ReactNode; className?: string }) {
     const ref = useRef<HTMLDivElement>(null);
     const isInView = useInView(ref, {
-        once: false,
-        margin: "0px 0px -100px 0px",
+        once: true, // Repeat animation
+        margin: "0px 0px -200px 0px", // Trigger earlier
+        amount: 0.1, // Trigger when 20% visible
     });
     const containerVariants = {
         hidden: { opacity: 0 },
