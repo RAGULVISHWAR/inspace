@@ -6,7 +6,35 @@ import { Counter } from "../../components/Animations/counter";
 import { ArrowUpRight } from 'lucide-react';
 import Link from "next/link";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { motion } from "framer-motion"
+import TestimonialCarousel from "@/components/Animations/carosal";
+import { motion, useInView } from 'framer-motion'
+import { useRef } from "react";
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 75, // Start further down
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7, // Longer duration
+      ease: "easeInOut", // Different easing
+    },
+  },
+};
+
+// Modify stagger effect
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Increase stagger
+      delayChildren: 0.1, // Add initial delay
+    },
+  },
+};
 const Home = () => {
   const image: [string, string, string, string][] = [
     ["1", "/images/saravana.png", "Saravana stores", "projects/1"],
@@ -62,25 +90,24 @@ const Home = () => {
 
   return (
     <div className="home mt-20">
-      {/* div one Welcome text-[clamp(2rem,6vw,4.5rem)] text-base */}
-      <div className="welcome-div relative w-full h-screen">
+      {/* Welcome Section */}
+      <MotionSection className="welcome-div relative w-full h-screen">
         <Image src={home} alt="home" fill className="object-cover object-center" />
-        <div className="absolute left-0 bottom-0 w-full p-5 mb-16 md:p-10 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+        <motion.div
+          variants={itemVariants}
+          className="absolute left-0 bottom-0 w-full p-5 mb-16 md:p-10 flex flex-col sm:flex-row justify-between items-start sm:items-center"
+        >
           <motion.div
-            initial={{ opacity: 0, y: -70 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} // Triggers only the first time it enters the viewport
-            transition={{ duration: 1 }}
-            className="text-white font-medium text-[clamp(2rem,6vw,4.5rem)]">
+            variants={itemVariants}
+            className="text-white font-medium text-[clamp(2rem,6vw,4.5rem)]"
+          >
             <p>INSPACE RETAIL</p>
             <p>DISPLAYS FOR SHOP</p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 70 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} // Triggers only the first time it enters the viewport
-            transition={{ duration: 1 }}
-            className="space-y-4">
+            variants={itemVariants}
+            className="space-y-4"
+          >
             <div className="text-gray-100 text-base sm:text-lg max-w-md">
               We use modern techniques to boost sustainable farming and protect the environment.
             </div>
@@ -93,11 +120,12 @@ const Home = () => {
               </Button>
             </div>
           </motion.div>
-        </div>
-      </div>
-      {/* div two Achievements text-[clamp(3.5rem,9vw,6.5rem)] */}
-      <div className="achievements-div grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 p-3 sm:p-5 md:p-7 lg:p-9">
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary ">
+        </motion.div>
+      </MotionSection>
+
+      {/* Achievements Section */}
+      <MotionSection className="achievements-div grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 p-3 sm:p-5 md:p-7 lg:p-9">
+        <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary">
           <div>
             <Counter target={38} plus="+" classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
           </div>
@@ -105,119 +133,115 @@ const Home = () => {
           <div className="absolute top-0 right-0 rounded-full p-2 bg-primary m-3 sm:m-4 lg:m-6">
             <ArrowUpRight className="text-white" />
           </div>
-        </div>
-
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary ">
+        </motion.div>
+        <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary">
           <div>
             <Counter target={1200} plus="+" classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
           </div>
           <p className="text-lg md:text-xl">Projects Completed</p>
-          <div className="absolute top-0 right-0 rounded-full p-2  bg-primary m-3 sm:m-4 lg:m-6">
+          <div className="absolute top-0 right-0 rounded-full p-2 bg-primary m-3 sm:m-4 lg:m-6">
             <ArrowUpRight className="text-white" />
           </div>
-        </div>
-
-        <div className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary col-span-2 md:col-span-1 ">
+        </motion.div>
+        <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary col-span-2 md:col-span-1">
           <div>
             <Counter target={7} classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
           </div>
           <p className="text-lg md:text-xl">Operating Location</p>
-          <div className="absolute top-0 right-0 rounded-full p-2  bg-primary m-3 sm:m-4 lg:m-6">
+          <div className="absolute top-0 right-0 rounded-full p-2 bg-primary m-3 sm:m-4 lg:m-6">
             <ArrowUpRight className="text-white" />
           </div>
-        </div>
-      </div>
-      {/* div three Choose text-[clamp(2rem,4vw,6.5rem)] text-[clamp(0.9rem,1vw,1.2rem)] text-[clamp(1rem,1.2vw,2.2rem)] */}
-      <div className="choose-div w-full bg-primaryLight p-6 sm:p-8 md:p-10 lg:p-12 py-12 sm:py-14 md:py-18 lg:py-20 space-y-12 md:space-y-24">
-        <div className="head-div w-full gap-6">
+        </motion.div>
+      </MotionSection>
+
+      {/* Choose Section */}
+      <MotionSection className="choose-div w-full bg-primaryLight p-6 sm:p-8 md:p-10 lg:p-12 py-12 sm:py-14 md:py-18 lg:py-20 space-y-12 md:space-y-24">
+        <motion.div variants={itemVariants} className="head-div w-full gap-6">
           <div className="text-center text-primary text-[clamp(2rem,4vw,6.5rem)] font-medium">
             Why Choose Inspace?
           </div>
           <div className="hidden lg:block text-center place-self-center text-[clamp(0.9rem,1vw,1.2rem)] sm:w-2/4 md:w-3/4">
-            At Inspace, we&apos;re committed to creating commercial interiors and furniture solutions that go beyond the ordinary. From innovative designs to reliable support, everything we do is focused on helping you transform your space into an immersive and efficient environment.
+            At Inspace, we&apos;re committed to creating commercial interiors and furniture solutions that go beyond the ordinary...
           </div>
           <div className="text-center place-self-center text-[clamp(0.9rem,1vw,1.2rem)] sm:w-2/4 md:w-3/4 lg:hidden">
             At Inspace, we craft innovative interiors and furniture solutions to transform your space efficiently.
           </div>
-        </div>
-        {/*  */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-12 ">
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] ">
-            <p className="font-semibold">#01</p>
-            <p className="font-semibold">Tailored & Modular Solutions</p>
-            <p className="text-base md:text-lg">
-              We believe every brand has its own story. Our modular systems and custom displays let you shape your space exactly the way you envision without compromise.
-            </p>
-          </div>
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] ">
-            <p className="font-semibold">#02</p>
-            <p className="font-semibold">Unmatched Quality & Durability</p>
-            <p className="text-base md:text-lg">
-              Our products are built to last, using premium materials and rigorous manufacturing processes. Enjoy peace of mind with extended warranties that safeguard your investment.
-            </p>
-          </div>
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] ">
-            <p className="font-semibold">#03</p>
-            <p className="font-semibold">Nationwide Delivery & On-Site Support</p>
-            <p className="text-base md:text-lg">
-              Wherever you are, our dedicated logistics network ensures prompt delivery and hassle-free installation. Plus, our expert support team is just a call away to handle any requirements.
-            </p>
-          </div>
-          <div className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)] ">
-            <p className="font-semibold">#04</p>
-            <p className="font-semibold">Customer-Centric Partnership</p>
-            <p className="text-base md:text-lg">
-              Your success is our priority. From concept to completion, we collaborate closely with you, offering personalized guidance and solutions that align with your brand&apos;s goals and vision.
-            </p>
-          </div>
-        </div>
-      </div>
-      {/* div four Feature text-[clamp(1rem,1.2vw,2.2rem)] text-[clamp(1.2rem,1.8vw,3.5rem)] text-[clamp(1rem,1.2vw,2rem)]  text-[clamp(1.2rem,1.5vw,3.5rem)] */}
-      <div className="feature-div w-full text-primary p-5 sm:p-7 md:p-9 lg:p-12 space-y-6 sm:space-y-8 md:space-y-12 lg:space-y-14">
-        <div className="head-div place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5">
-          <p className="rounded-full border border-primary p-2 px-6  w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
+        </motion.div>
+        <motion.div
+          variants={containerVariants}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-12"
+        >
+          {[
+            ["Tailored & Modular Solutions", "We believe every brand has its own story. Our modular systems and custom displays let you shape your space exactly the way you envision without compromise."],
+            ["Unmatched Quality & Durability", "Our products are built to last, using premium materials and rigorous manufacturing processes. Enjoy peace of mind with extended warranties that safeguard your investment."],
+            ["Nationwide Delivery & On-Site Support", "Wherever you are, our dedicated logistics network ensures prompt delivery and hassle-free installation. Plus, our expert support team is just a call away to handle any requirements."],
+            ["Customer-Centric Partnership", "Your success is our priority. From concept to completion, we collaborate closely with you, offering personalized guidance and solutions that align with your brand’s goals and vision."]
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="bg-white p-5 md:p-7 space-y-6 py-6 sm:py-8 md:py-10 rounded-lg text-primary w-full text-[clamp(1rem,1.2vw,2.2rem)]"
+            >
+              <p className="font-semibold">#{String(index + 1).padStart(2, '0')}</p>
+              <p className="font-semibold">{item[0]}</p>
+              <p className="text-base md:text-lg">{item[1]}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </MotionSection>
+
+      {/* Feature Section */}
+      <MotionSection className="feature-div w-full text-primary p-5 sm:p-7 md:p-9 lg:p-12 space-y-6 sm:space-y-8 md:space-y-12 lg:space-y-14">
+        <motion.div
+          variants={itemVariants}
+          className="head-div place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5"
+        >
+          <p className="rounded-full border border-primary p-2 px-6 w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
             Featured Portfolios
           </p>
           <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold">
-            Our interior design projects provide a glimpse into our expertise. Click for more to explore our portfolio.
+            Our interior design projects provide a glimpse into our expertise...
           </p>
           <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
             We provide world-class solutions that help you 10x your speed.
           </p>
-        </div>
-        <div className="portfolios-div">
+        </motion.div>
+        <motion.div variants={containerVariants} className="portfolios-div">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-5 md:gap-12 px-1 sm:px-6 md:px-8 lg:px-10">
-            {image?.length > 0 &&
-              image.map((img, index) => {
-                return (
-                  <Link href={img[3]} key={index}>
-                    <div className="relative w-full h-[250px] lg:h-[400px] xl:h-[500px] rounded-xl overflow-hidden group transition-transform transform duration-300 ease-in-out hover:scale-105">
-                      <Image
-                        src={img[1]}
-                        alt={img[2]}
-                        fill
-                        className="object-cover transition-transform transform duration-300 ease-in-out group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-black/0 transition-all duration-300 ease-in-out group-hover:bg-black/60"></div>
-                      <div className="absolute top-0 right-0 rounded-full p-2 xl:p-3 bg-blend-color-burn m-3 sm:m-4 lg:m-6 backdrop-blur-lg border border-white">
-                        <ArrowUpRight className="text-white xl:size-10" />
-                      </div>
-                      <p className="opacity-100 absolute bottom-0 left-0 text-white text-[clamp(1.2rem,1.5vw,3.5rem)] p-3 sm:p-5 md:p-7 font-semibold text-center transition-opacity duration-300 ease-out group-hover:opacity-0">
-                        {img[2]}
-                      </p>
-                      <p className="opacity-0 absolute top-1/2 left-1/4 text-white text-[clamp(1.2rem,1.5vw,3.5rem)] p-3 sm:p-5 md:p-7 font-semibold text-center transition-opacity duration-500 ease-out group-hover:opacity-100">
-                        {img[2]}
-                      </p>
+            {image?.length > 0 && image.map((img, index) => (
+              <motion.div variants={itemVariants} key={index}>
+                <Link href={img[3]}>
+                  <div className="relative w-full h-[250px] lg:h-[400px] xl:h-[500px] rounded-xl overflow-hidden group transition-transform transform duration-300 ease-in-out hover:scale-105">
+                    <Image
+                      src={img[1]}
+                      alt={img[2]}
+                      fill
+                      className="object-cover transition-transform transform duration-300 ease-in-out group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/0 transition-all duration-300 ease-in-out group-hover:bg-black/60"></div>
+                    <div className="absolute top-0 right-0 rounded-full p-2 xl:p-3 bg-blend-color-burn m-3 sm:m-4 lg:m-6 backdrop-blur-lg border border-white">
+                      <ArrowUpRight className="text-white xl:size-10" />
                     </div>
-                  </Link>
-                );
-              })}
+                    <p className="opacity-100 absolute bottom-0 left-0 text-white text-[clamp(1.2rem,1.5vw,3.5rem)] p-3 sm:p-5 md:p-7 font-semibold text-center transition-opacity duration-300 ease-out group-hover:opacity-0">
+                      {img[2]}
+                    </p>
+                    <p className="opacity-0 absolute top-1/2 left-1/4 text-white text-[clamp(1.2rem,1.5vw,3.5rem)] p-3 sm:p-5 md:p-7 font-semibold text-center transition-opacity duration-500 ease-out group-hover:opacity-100">
+                      {img[2]}
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
           </div>
-        </div>
-      </div>
-      {/* div five clients */}
-      <div className="clients-div p-5 sm:p-7 md:p-9 lg:p-12">
-        <div className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5">
+        </motion.div>
+      </MotionSection>
+
+      {/* Clients Section */}
+      <MotionSection className="clients-div p-5 sm:p-7 md:p-9 lg:p-12">
+        <motion.div
+          variants={itemVariants}
+          className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5"
+        >
           <p className="rounded-full border border-primary p-2 px-6 w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
             Trusted
           </p>
@@ -225,39 +249,43 @@ const Home = () => {
             Our Clients
           </p>
           <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
-            We providing world class  that help&apos;s you to 10x your speed.
+            We providing world class that help&apos;s you to 10x your speed.
           </p>
-        </div>
-        <div className="clients p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-5 " >
-            {
-              client?.length > 0 && client.map((ct, index) => {
-                return (
-                  <div key={index} className="relative w-full h-[100px] md:h-[250px] rounded-2xl overflow-hidden group">
-                    <Image
-                      src={ct[0]}
-                      alt={`${index}`}
-                      fill
-                      className="object-cover transition-transform transform duration-300 ease-in-out group-hover:scale-110"
-                    />
-                    <div className="absolute top-1 md:top-1/3  w-full h-[90px]">
-                      <Image
-                        src={ct[1]}
-                        alt={`${index}`}
-                        fill
-                        className="object-contain p-2 sm:p-3"
-                      />
-                    </div>
-                  </div>
-                )
-              })
-            }
+        </motion.div>
+        <motion.div variants={containerVariants} className="clients p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-5">
+            {client?.length > 0 && client.map((ct, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="relative w-full h-[100px] md:h-[250px] rounded-2xl overflow-hidden group"
+              >
+                <Image
+                  src={ct[0]}
+                  alt={`${index}`}
+                  fill
+                  className="object-cover transition-transform transform duration-300 ease-in-out group-hover:scale-110"
+                />
+                <div className="absolute top-1 md:top-1/3 w-full h-[90px]">
+                  <Image
+                    src={ct[1]}
+                    alt={`${index}`}
+                    fill
+                    className="object-contain p-2 sm:p-3"
+                  />
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </div>
-      </div>
-      {/* div five testimonal */}
-      <div className="testimonal-div p-5 sm:p-7 md:p-9 lg:p-12">
-        <div className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5">
+        </motion.div>
+      </MotionSection>
+
+      {/* Testimonial Section */}
+      <MotionSection className="testimonal-div p-5 sm:p-7 md:p-9 lg:p-12 flex flex-col gap-7 md:gap-10">
+        <motion.div
+          variants={itemVariants}
+          className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5"
+        >
           <p className="rounded-full border border-primary p-2 px-6 w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
             Testimonials
           </p>
@@ -265,13 +293,20 @@ const Home = () => {
             Join the customer who&apos;ve already
           </p>
           <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
-            We providing world class  that help&apos;s you to 10x your speed.
+            We providing world class that help&apos;s you to 10x your speed.
           </p>
-        </div>
-      </div>
-      {/* div six caption */}
-      <div className="caption-div p-5 sm:p-7 md:p-9 lg:p-12 space-y-10">
-        <div className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5">
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <TestimonialCarousel />
+        </motion.div>
+      </MotionSection>
+
+      {/* FAQ Section */}
+      <MotionSection className="caption-div p-5 sm:p-7 md:p-9 lg:p-12 space-y-10">
+        <motion.div
+          variants={itemVariants}
+          className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5"
+        >
           <p className="rounded-full border border-primary p-2 px-6 w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
             Caption
           </p>
@@ -279,39 +314,64 @@ const Home = () => {
             Frequently Asked Questions
           </p>
           <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
-            Still you have any questions? Contact our Team via <Link href={'support@inspacestore.in'} className="text-blue-500">support@inspacestore.in</Link>
+            Still you have any questions? Contact our Team via{" "}
+            <Link href={'support@inspacestore.in'} className="text-blue-500">
+              support@inspacestore.in
+            </Link>
           </p>
-        </div>
-        <div className="bg-primaryLight rounded-md p-10 sm:mx-5 md:mx-10 lg:mx-20 ">
-          <div>
+        </motion.div>
+        <motion.div
+          variants={itemVariants}
+          className="bg-primaryLight rounded-md p-10 sm:mx-5 md:mx-10 lg:mx-20"
+        >
+          <motion.div variants={itemVariants}>
             <p className="text-[clamp(1rem,1.2vw,2.2rem)] font-semibold">
               Category goes here
             </p>
             <p className="hidden md:block text-[clamp(0.9rem,1vw,1.2rem)]">
               Lorem ipsum dolor sit amet consectetur. Sit et phasellus ullamcorper at.
             </p>
-          </div>
-          <div className="">
-            {
-              questions.map((q, index) => {
-                return (
-                  <Accordion type="single" collapsible className="w-full sm:pt-3 md:pt-6 lg:pt-10" key={index}>
-                    <AccordionItem value="item-1">
-                      <AccordionTrigger className="text-[clamp(1rem,1.2vw,2.2rem)]">{q[0]}</AccordionTrigger>
-                      <AccordionContent className="text-[clamp(0.9rem,1vw,1.2rem)] lg:mr-9">
-                        {q[1]}
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                );
-
-              })
-            }
-          </div>
-        </div>
-      </div>
-    </div >
+          </motion.div>
+          <motion.div variants={containerVariants}>
+            {questions.map((q, index) => (
+              <motion.div variants={itemVariants} key={index}>
+                <Accordion type="single" collapsible className="w-full sm:pt-3 md:pt-6 lg:pt-10">
+                  <AccordionItem value={`item-${index}`}>
+                    <AccordionTrigger className="text-[clamp(1rem,1.2vw,2.2rem)]">
+                      {q[0]}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-[clamp(0.9rem,1vw,1.2rem)] lg:mr-9">
+                      {q[1]}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </MotionSection>
+    </div>
   );
-}
+};
+function MotionSection({ children, className }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    once: false, // Repeat animation
+    margin: "0px 0px -200px 0px", // Trigger earlier
+    amount: 0.1, // Trigger when 20% visible
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={containerVariants}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 export default Home;
