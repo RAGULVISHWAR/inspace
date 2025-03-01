@@ -96,7 +96,7 @@ export default function TestimonialCarousel() {
             </button>
 
             {/* Slides Container */}
-            <div className="overflow-hidden">
+            <div className="overflow-hidden p-2">
                 <div className="flex gap-6 transition-all duration-300">
                     {getVisibleSlides().map((testimonial, index) => (
                         <div

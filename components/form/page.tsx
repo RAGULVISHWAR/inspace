@@ -72,7 +72,7 @@ export default function ContactForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto bg-white p-3 md:p-8 w-3/4 md:w-2/4 rounded-lg">
+        <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto bg-white p-3 md:p-8 w-3/4 md:w-3/5 rounded-lg">
             <div className='text-primary font-semibold text-[clamp(1rem,1.5vw,2rem)] flex gap-3 place-self-center '>
                 <X className='w-fit size-8 place-self-center' />
                 <p>Talk to a design expert</p>

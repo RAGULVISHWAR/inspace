@@ -1,4 +1,147 @@
 export const datas = {
+    Designs: [
+        {
+            name: "How a Well-Designed Store Boosts Customer Experience and Sales",
+            desc: "When setting up or renovating a retail store, choosing the right fixtures is crucial. Quality fixtures not only enhance aesthetics but also improve durability, functionality, and customer experience. Poor-quality fixtures, on the other hand, can lead to frequent replacements, safety issues, and an overall negative impact on your store&apos;s appeal.",
+            img: "",
+            content: [
+                {
+                    head: "Durability & Longevity",
+                    body: "High-quality materials ensure that your fixtures last longer, reducing maintenance costs and minimizing disruptions due to replacements."
+                },
+                {
+                    head: "Enhancing Customer Experience",
+                    body: " A well-designed store with sturdy, aesthetically pleasing fixtures creates a positive shopping atmosphere, encouraging customers to spend more time exploring."
+                },
+                {
+                    head: "Material",
+                    body: "Opt for durable materials like wood, metal, or high-grade plastic."
+                },
+                {
+                    head: "Functionality",
+                    body: "Ensure fixtures are designed for efficient product display and accessibility."
+                },
+                {
+                    head: "Conclusion",
+                    body: "Investing in quality fixtures is an investment in your brand&apos;s success. Make informed choices that balance durability, aesthetics, and functionality to create a seamless shopping experience."
+                },
+
+            ]
+        },
+        {
+            name: "How a Well-Designed Store Boosts Customer Experience and Sales",
+            desc: "Retail success is not just about the products you sell—it’s also about how your store is designed. An intuitive, well-organized retail space can significantly improve customer experience, leading to increased sales and repeat business.",
+            img: "",
+            content: [
+                {
+                    head: "First Impressions Matter",
+                    body: "Your store’s layout, lighting, and fixtures create an immediate impression. A well-organized space invites customers to explore, while a cluttered or poorly lit store may drive them away."
+                },
+                {
+                    head: "Use lighting strategically:",
+                    body: "Highlight key areas and create a welcoming ambiance."
+                },
+                {
+                    head: "Optimize shelf and display heights",
+                    body: "Ensure products are at eye level for easy access."
+                },
+                {
+                    head: "Create a flow",
+                    body: "Guide customers naturally through your store with a logical layout."
+                },
+                {
+                    head: "Conclusion",
+                    body: "A well-designed retail space enhances customer satisfaction and maximizes sales potential. Investing in smart store design is key to long-term success in the competitive retail industry."
+                },
+            ]
+        },
+        {
+            name: "The Role of Innovation in Modern Retail Design",
+            desc: "nnovation in retail design goes beyond aesthetics; it transforms how customers interact with your brand. From smart shelving to interactive displays, modern retail spaces leverage technology and creative layouts to improve engagement and efficiency.",
+            img: "",
+            content: [
+                {
+                    head: "Smart Fixtures & Displays",
+                    body: "Interactive screens, digital price tags, and RFID-enabled shelves enhance customer convenience and streamline inventory management."
+                },
+                {
+                    head: "Modular & Flexible Store Layouts",
+                    body: "Retailers now use modular fixtures that can be reconfigured based on seasonal trends and customer preferences."
+                },
+                {
+                    head: "Sustainable Design Practices",
+                    body: "Eco-friendly materials and energy-efficient lighting contribute to sustainability while maintaining a high-end look."
+                },
+                {
+                    head: "Conclusion",
+                    body: "Retail innovation is essential for staying competitive. By integrating technology and flexible design, you can create an engaging shopping experience that meets the expectations of today’s customers"
+                },
+            ]
+        },
+        {
+            name: "5 Key Factors to Consider When Upgrading Your Store Interiors",
+            desc: "Upgrading your store interiors is a crucial investment in enhancing customer experience and increasing sales. Whether it's a full renovation or a minor update, strategic planning is key.",
+            img: "",
+            content: [
+                {
+                    head: "Space Utilization & Layout",
+                    body: "Optimize your space with an efficient layout that ensures easy navigation and maximizes product visibility."
+                }, {
+                    head: "Lighting & Ambiance",
+                    body: "Proper lighting enhances the shopping experience, draws attention to key areas, and creates a welcoming environment."
+                }, {
+                    head: "Branding Consistency",
+                    body: "Your interior should align with your brand identity, ensuring a cohesive look through colors, materials, and signage"
+                }, {
+                    head: "Durability & Maintenance",
+                    body: "Choose materials and fixtures that are long-lasting, easy to maintain, and cost-effective in the long run"
+                },
+            ]
+        },
+        {
+            name: "Building a Strong Brand Identity Through Store Design",
+            desc: "Your store design is more than just an arrangement of shelves and display units—it’s a powerful tool for building brand identity. A well-designed retail space creates a lasting impression, reinforces your brand’s personality, and enhances customer experience. Every detail, from color schemes to fixture styles, plays a role in communicating your brand’s message.",
+            img: "",
+            content: [
+                {
+                    head: "Creating a Memorable First Impression",
+                    body: "The moment a customer walks into your store, they should immediately sense your brand’s identity. The layout, lighting, and décor should align with your brand’s values and aesthetic."
+                },
+                {
+                    head: "Consistency in Branding Elements",
+                    body: "Consistency is key to building trust. Using your brand’s color palette, typography, and logo placement throughout your store strengthens brand recall and creates a cohesive experience."
+                },
+                {
+                    head: "Strategic Store Layout for Customer Engagement",
+                    body: "A thoughtful store layout ensures customers can easily navigate and interact with your products. Consider focal points, aisle width, and product placements that align with your brand story."
+                },
+                {
+                    head: "Conclusion",
+                    body: "A strong brand identity through store design fosters loyalty and enhances the customer experience. By aligning design elements with your brand’s personality, you create an immersive and recognizable retail environment. Investing in a well-thought-out store design ensures that your brand stands out in a competitive market."
+                },
+            ]
+        }, {
+            name: "",
+            desc: "",
+            img: "",
+            content: [
+                {
+                    head: "",
+                    body: ""
+                },
+            ]
+        }, {
+            name: "",
+            desc: "",
+            img: "",
+            content: [
+                {
+                    head: "",
+                    body: ""
+                },
+            ]
+        },
+    ],
     teams: [
         {
             name: "Member1",

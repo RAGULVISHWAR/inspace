@@ -7,34 +7,10 @@ import { ArrowUpRight } from 'lucide-react';
 import Link from "next/link";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import TestimonialCarousel from "@/components/Animations/carosal";
-import { motion, useInView } from 'framer-motion'
-import { useRef } from "react";
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 75, // Start further down
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5, // Longer duration
-      ease: "easeInOut", // Different easing
-    },
-  },
-};
+import { motion } from 'framer-motion'
+import MotionSection from "@/components/Animations/motion";
+import { itemVariants, containerVariants } from "@/components/Animations/motion";
 
-// Modify stagger effect
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2, // Increase stagger
-      delayChildren: 0.1, // Add initial delay
-    },
-  },
-};
 const Home = () => {
   const image: [string, string, string, string][] = [
     ["1", "/images/saravana.png", "Saravana stores", "projects/1"],
@@ -125,29 +101,29 @@ const Home = () => {
 
       {/* Achievements Section */}
       <MotionSection className="achievements-div grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 p-3 sm:p-5 md:p-7 lg:p-9">
-        <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary">
+        <motion.div variants={itemVariants} className="relative bg-primaryLight p-4 sm:p-9 md:p-12 rounded-md text-primary">
           <div>
-            <Counter target={38} plus="+" classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
+            <Counter target={38} plus="+" classname="text-[clamp(2rem,3vw,4rem)] font-medium text-primary" />
           </div>
-          <p className="text-lg md:text-xl">Years</p>
+          <p className="text-md md:text-lg">Years</p>
           <div className="absolute top-0 right-0 rounded-full p-2 bg-primary m-3 sm:m-4 lg:m-6">
             <ArrowUpRight className="text-white" />
           </div>
         </motion.div>
-        <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary">
+        <motion.div variants={itemVariants} className="relative bg-primaryLight p-4 sm:p-9 md:p-12 rounded-md text-primary">
           <div>
-            <Counter target={1200} plus="+" classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
+            <Counter target={1200} plus="+" classname="text-[clamp(2rem,3vw,4rem)] font-medium text-primary" />
           </div>
-          <p className="text-lg md:text-xl">Projects Completed</p>
+          <p className="text-md md:text-lg">Projects Completed</p>
           <div className="absolute top-0 right-0 rounded-full p-2 bg-primary m-3 sm:m-4 lg:m-6">
             <ArrowUpRight className="text-white" />
           </div>
         </motion.div>
-        <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 sm:p-9 md:p-12 rounded-md text-primary col-span-2 md:col-span-1">
+        <motion.div variants={itemVariants} className="relative bg-primaryLight p-4 sm:p-9 md:p-12 rounded-md text-primary col-span-2 md:col-span-1">
           <div>
-            <Counter target={7} classname="text-[clamp(3.5rem,6vw,6rem)] font-normal text-primary" />
+            <Counter target={7} classname="text-[clamp(2rem,3vw,4rem)] font-medium text-primary" />
           </div>
-          <p className="text-lg md:text-xl">Operating Location</p>
+          <p className="text-md md:text-lg font-normal">Operating Location</p>
           <div className="absolute top-0 right-0 rounded-full p-2 bg-primary m-3 sm:m-4 lg:m-6">
             <ArrowUpRight className="text-white" />
           </div>
@@ -353,25 +329,6 @@ const Home = () => {
     </div>
   );
 };
-function MotionSection({ children, className }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, {
-    once: true, // Repeat animation
-    margin: "0px 0px -200px 0px", // Trigger earlier
-    amount: 0.1, // Trigger when 20% visible
-  });
 
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={containerVariants}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-};
 
 export default Home;

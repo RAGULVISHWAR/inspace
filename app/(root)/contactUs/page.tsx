@@ -6,37 +6,12 @@ import Link from "next/link";
 import { MapPin, Mail, Phone } from 'lucide-react';
 import ContactForm from "@/components/form/page";
 import TestimonialCarousel from "@/components/Animations/carosal";
-import { motion, useInView } from 'framer-motion'
-import { useRef } from "react";
-
+import { motion } from 'framer-motion'
+import MotionSection from "@/components/Animations/motion";
+import { itemVariants, containerVariants } from "@/components/Animations/motion";
 const ContactUs = () => {
 
-    const itemVariants = {
-        hidden: {
-            opacity: 0,
-            y: 75, // Start further down
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5, // Longer duration
-                ease: "easeInOut", // Different easing
-            },
-        },
-    };
 
-    // Modify stagger effect
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2, // Increase stagger
-                delayChildren: 0.1, // Add initial delay
-            },
-        },
-    };
     const questions: [string, string][] = [
         [
             "What types of projects does Inspace handle?",
@@ -73,7 +48,7 @@ const ContactUs = () => {
     ]
     return (
         <motion.div
-            className="w-full mt-15 flex flex-col gap-10 md:gap-15"
+            className="w-full mt-20 flex flex-col gap-10 md:gap-15"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -253,33 +228,6 @@ const ContactUs = () => {
         </motion.div>
     );
 };
-function MotionSection({ children, className }: { children: React.ReactNode; className?: string }) {
-    const ref = useRef<HTMLDivElement>(null);
-    const isInView = useInView(ref, {
-        once: true, // Repeat animation
-        margin: "0px 0px -200px 0px", // Trigger earlier
-        amount: 0.1, // Trigger when 20% visible
-    });
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1, // Stagger each child by 0.1s
-            },
-        },
-    };
-    return (
-        <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={containerVariants}
-            className={className}
-        >
-            {children}
-        </motion.div>
-    );
-}
+
 
 export default ContactUs;
