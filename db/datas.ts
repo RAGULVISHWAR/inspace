@@ -1,9 +1,10 @@
 export const datas = {
-    Designs: [
+    designs: [
         {
+            id: "1",
             name: "How a Well-Designed Store Boosts Customer Experience and Sales",
             desc: "When setting up or renovating a retail store, choosing the right fixtures is crucial. Quality fixtures not only enhance aesthetics but also improve durability, functionality, and customer experience. Poor-quality fixtures, on the other hand, can lead to frequent replacements, safety issues, and an overall negative impact on your store&apos;s appeal.",
-            img: "",
+            img: "/images/blog1.jpeg",
             content: [
                 {
                     head: "Durability & Longevity",
@@ -29,9 +30,10 @@ export const datas = {
             ]
         },
         {
+            id: "2",
             name: "How a Well-Designed Store Boosts Customer Experience and Sales",
             desc: "Retail success is not just about the products you sell—it’s also about how your store is designed. An intuitive, well-organized retail space can significantly improve customer experience, leading to increased sales and repeat business.",
-            img: "",
+            img: "/images/blog2.jpeg",
             content: [
                 {
                     head: "First Impressions Matter",
@@ -56,9 +58,10 @@ export const datas = {
             ]
         },
         {
+            id: "3",
             name: "The Role of Innovation in Modern Retail Design",
             desc: "nnovation in retail design goes beyond aesthetics; it transforms how customers interact with your brand. From smart shelving to interactive displays, modern retail spaces leverage technology and creative layouts to improve engagement and efficiency.",
-            img: "",
+            img: "/images/blog3.jpeg",
             content: [
                 {
                     head: "Smart Fixtures & Displays",
@@ -79,9 +82,10 @@ export const datas = {
             ]
         },
         {
+            id: "4",
             name: "5 Key Factors to Consider When Upgrading Your Store Interiors",
             desc: "Upgrading your store interiors is a crucial investment in enhancing customer experience and increasing sales. Whether it's a full renovation or a minor update, strategic planning is key.",
-            img: "",
+            img: "/images/blog4.jpeg",
             content: [
                 {
                     head: "Space Utilization & Layout",
@@ -99,9 +103,10 @@ export const datas = {
             ]
         },
         {
+            id: "5",
             name: "Building a Strong Brand Identity Through Store Design",
             desc: "Your store design is more than just an arrangement of shelves and display units—it’s a powerful tool for building brand identity. A well-designed retail space creates a lasting impression, reinforces your brand’s personality, and enhances customer experience. Every detail, from color schemes to fixture styles, plays a role in communicating your brand’s message.",
-            img: "",
+            img: "/images/blog5.jpeg",
             content: [
                 {
                     head: "Creating a Memorable First Impression",
