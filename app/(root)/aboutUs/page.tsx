@@ -342,7 +342,7 @@ const AboutUS = () => {
                         className="relative w-full h-[500px] md:h-screen rounded-lg overflow-hidden"
                     >
                         <Image src={"/images/form.png"} alt="form" fill className="object-cover" />
-                        <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="absolute inset-0 flex items-center justify-center md:right-2/4 md:top-1/4">
                             <ContactForm />
                         </div>
                     </motion.div>
