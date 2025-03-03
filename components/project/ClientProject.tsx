@@ -28,13 +28,13 @@ const ClientProject = ({ project }: { project: Project }) => {
 
     return (
         <motion.div
-            className="w-full mt-28 px-4 md:px-10 lg:px-20 space-y-5 sm:space-y-7 md:space-y-10 lg:space-y-15"
+            className="w-full mt-28 px-4 lg:px-10 flx flex-col gap-5 lg:gap-10"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
         >
             {/* Section 1: Project Header */}
-            <MotionSection className="flex flex-col p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 gap-2 md:gap-7">
+            <MotionSection className="flex flex-col p-2  md:gap-7">
                 <motion.p
                     variants={itemVariants}
                     className="text-primary text-[clamp(1.7rem,2.5vw,4.5rem)] font-semibold"
@@ -56,7 +56,7 @@ const ClientProject = ({ project }: { project: Project }) => {
             </MotionSection>
             {/* ... rest of your sections unchanged */}
             {/* Section 2: Solution */}
-            <MotionSection className="flex flex-col p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 gap-2 md:gap-7">
+            <MotionSection className="flex flex-col p-2  gap-2 md:gap-7">
                 <motion.div variants={itemVariants} className="flex flex-col gap-2">
                     <p className="text-primary text-[clamp(1.5rem,2vw,4rem)] font-semibold">
                         Inspace&apos;s Solution
@@ -87,7 +87,7 @@ const ClientProject = ({ project }: { project: Project }) => {
             </MotionSection>
 
             {/* Section 3: Outcomes */}
-            <MotionSection className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+            <MotionSection className="p-2 ">
                 <motion.div variants={itemVariants} className="flex flex-col gap-y-2 md:gap-y-4">
                     <p className="text-primary text-[clamp(1.5rem,2vw,4rem)] font-semibold">
                         Outcomes
@@ -121,7 +121,7 @@ const ClientProject = ({ project }: { project: Project }) => {
             </MotionSection>
 
             {/* Section 4: For More */}
-            <MotionSection className="gap-y-2 md:gap-y-4 p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+            <MotionSection className="gap-y-2 md:gap-y-4 p-2 ">
                 <motion.div variants={itemVariants}>
                     <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold text-primary">
                         For More
@@ -136,7 +136,7 @@ const ClientProject = ({ project }: { project: Project }) => {
             </MotionSection>
 
             {/* Section 5: Contact Form */}
-            <MotionSection className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+            <MotionSection className="p-2 ">
                 <motion.div
                     variants={itemVariants}
                     className="relative w-full h-[500px] md:h-screen rounded-lg overflow-hidden"

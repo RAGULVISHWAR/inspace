@@ -10,6 +10,7 @@ import { Marquee } from "@/components/magicui/marquee";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import MotionSection from "@/components/Animations/motion";
 import { itemVariants, containerVariants } from "@/components/Animations/motion";
+import ContactForm from "@/components/form/page";
 const AboutUS = () => {
     const fact = ["/images/fact1.png", "/images/fact2.png", "/images/fact3.png", "/images/fact1.png", "/images/fact2.png",];
     const userj = [
@@ -75,10 +76,10 @@ const AboutUS = () => {
                         </div>
                         <div className="flex space-x-4">
                             <Button className="rounded-full text-base md:text-lg px-6 md:px-12 py-3 md:py-5 transition-all duration-300 ease-in-out transform hover:scale-105">
-                                Get Started
+                                <Link href={'/blogs'}>Get Started</Link>
                             </Button>
                             <Button className="rounded-full border-2 border-white bg-transparent text-base md:text-lg px-6 md:px-12 py-3 md:py-5 transition-all duration-200 ease-in-out transform hover:bg-transparent hover:scale-105">
-                                Know More
+                                <Link href={'/aboutUs'}>Know More</Link>
                             </Button>
                         </div>
                     </motion.div>
@@ -342,7 +343,7 @@ const AboutUS = () => {
                     >
                         <Image src={"/images/form.png"} alt="form" fill className="object-cover" />
                         <div className="absolute inset-0 flex items-center justify-center">
-                            {/* Add your ContactForm component here if needed */}
+                            <ContactForm />
                         </div>
                     </motion.div>
                 </MotionSection>

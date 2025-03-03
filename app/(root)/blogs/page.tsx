@@ -20,10 +20,10 @@ const Blogs = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible">
-            <MotionSection className="flex flex-col lg:h-screen px-10">
+            <MotionSection className="flex flex-col lg:h-screen px-4 lg:px-10 gap-2 lg:gap-4">
                 <motion.div
                     variants={itemVariants}
-                    className="head-div place-items-center w-full"
+                    className="head-div place-items-center w-full flex flex-col gap-2 lg:gap-4 p-2"
                 >
                     <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-bold text-primary max-w-lg">
                         Where Design Meets Expertise Explore Our Insights
@@ -34,7 +34,7 @@ const Blogs = () => {
                 </motion.div>
                 <motion.div
                     variants={containerVariants}
-                    className="flex-1 grid grid-cols-1 lg:grid-cols-6 lg:grid-rows-2 gap-2 lg:gap-5 w-full gap-y-2 lg:gap-y-4"
+                    className="flex-1 grid grid-cols-1 lg:grid-cols-6 lg:grid-rows-2 gap-4 lg:gap-5 w-full "
                 >
                     {cls.map((img, index) => (
                         <motion.div

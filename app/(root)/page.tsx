@@ -89,10 +89,10 @@ const Home = () => {
             </div>
             <div className="flex space-x-4">
               <Button className="rounded-full text-base md:text-lg px-6 md:px-12 py-3 md:py-5 transition-all duration-300 ease-in-out transform hover:scale-105">
-                Get Started
+                <Link href={'/blogs'}>Get Started</Link>
               </Button>
               <Button className="rounded-full border-2 border-white bg-transparent text-base md:text-lg px-6 md:px-12 py-3 md:py-5 transition-all duration-200 ease-in-out transform hover:bg-transparent hover:scale-105">
-                Know More
+                <Link href={'/aboutUs'}>Know More</Link>
               </Button>
             </div>
           </motion.div>
