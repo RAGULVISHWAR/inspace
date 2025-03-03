@@ -42,7 +42,7 @@ const AboutUS = () => {
     ]
     return (
         <motion.div
-            className="w-full h-full mt-20 space-y-10 md:space-y-16 lg:space-y-20"
+            className="w-full h-full mt-20 flex flex-col gap-10 lg:gap-15"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -92,17 +92,17 @@ const AboutUS = () => {
             >
                 {/* Attention Section */}
                 <MotionSection className="Attention flex flex-col-reverse md:flex-row gap-10 md:gap-20">
-                    <motion.div variants={itemVariants} className="space-y-5 md:space-y-10 lg:space-y-16">
+                    <motion.div variants={itemVariants} className="flex flex-col gap-5 lg:gap-7">
                         <p className="text-[clamp(2rem,3vw,4rem)] text-black font-semibold">
                             Attention and Maximum Attention to Detail
                         </p>
                         <p className="text-gray-700 text-[clamp(1rem,1.2vw,2.2rem)] font-medium">
-                            At Inspace, we specialize in transforming retail environments...
+                            At Inspace, we specialize in transforming retail environments with innovative, high-quality display solutions. With a focus on functionality, aesthetics, and durability, we design and manufacture shelving, racks, display units, and customized retail fixtures that enhance customer experience and optimize store layouts. From concept to installation, we deliver seamless, end-to-end solutions tailored to your brand&apos;s needs.
                         </p>
                         <div className="flex w-full md:w-2/4 gap-5">
-                            <Button className="rounded-full">Book A Call</Button>
+                            <Button className="rounded-full"><Link href={'/blogs'}>Get Started</Link></Button>
                             <Button className="rounded-full bg-transparent text-primary border-2 hover:bg-transparent border-primary">
-                                Learn More
+                                <Link href={'/aboutUs'}>Know More</Link>
                             </Button>
                         </div>
                     </motion.div>
