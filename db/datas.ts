@@ -40,7 +40,7 @@ export const datas = {
                     body: "Your store’s layout, lighting, and fixtures create an immediate impression. A well-organized space invites customers to explore, while a cluttered or poorly lit store may drive them away."
                 },
                 {
-                    head: "Use lighting strategically:",
+                    head: "Use lighting strategically",
                     body: "Highlight key areas and create a welcoming ambiance."
                 },
                 {
