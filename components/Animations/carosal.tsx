@@ -1,7 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const testimonials = [
     {
@@ -42,102 +47,62 @@ const testimonials = [
     },
 ];
 
-export default function TestimonialCarousel() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const slidesToShow = 3;
-    const autoSlideInterval = 3000;
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            nextSlide();
-        }, autoSlideInterval);
-        return () => clearInterval(timer);
-    }, [currentIndex]);
+const TestimonialCarousel = () => {
 
-    const prevSlide = () => {
-        setCurrentIndex((prev) =>
-            prev === 0 ? testimonials.length - 1 : prev - 1
-        );
-    };
-
-    const nextSlide = () => {
-        setCurrentIndex((prev) =>
-            prev === testimonials.length - 1 ? 0 : prev + 1
-        );
-    };
-
-    const goToSlide = (index: number) => {
-        setCurrentIndex(index);
-    };
-
-    const getVisibleSlides = () => {
-        const visibleSlides = [];
-        for (let i = 0; i < slidesToShow; i++) {
-            const slideIndex = (currentIndex + i) % testimonials.length;
-            visibleSlides.push(testimonials[slideIndex]);
-        }
-        return visibleSlides;
-    };
 
     return (
-        <div className="relative px-8 max-w-7xl mx-auto">
-            {/* Navigation Buttons */}
-            <button
-                onClick={prevSlide}
-                className="absolute -left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full flex items-center justify-center text-purple-900 hover:bg-purple-100 transition-colors"
-            >
-                <ChevronLeft className="w-8 h-8" />
-            </button>
-            <button
-                onClick={nextSlide}
-                className="absolute -right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full flex items-center justify-center text-purple-900 hover:bg-purple-100 transition-colors"
-            >
-                <ChevronRight className="w-8 h-8" />
-            </button>
+        <div>
+            <div>
+                <Swiper
+                    className="w-auto max-w-7xl mx-auto h-72 lg:h-96"
+                    modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    breakpoints={{
+                        640: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                    }}
+                    navigation
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    loop={true}
+                    pagination={{ clickable: true }}
+                    scrollbar={{ draggable: true }}
 
-            {/* Slides Container */}
-            <div className="overflow-hidden p-2">
-                <div className="flex gap-6 transition-all duration-300">
-                    {getVisibleSlides().map((testimonial, index) => (
-                        <div
+                // onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log('slide change')} bg-[#FAE8FF]
+                >
+                    {testimonials.map((testimonial, index) => (
+                        <SwiperSlide
                             key={index}
-                            className="w-full md:w-[calc(33.333%-16px)] flex-shrink-0 bg-[#FAE8FF] p-8 rounded-3xl h-[350px] flex flex-col justify-between"
+                            className="w-full py-6 px-4 bg-[#FAE8FF]rounded-xl h-full"
                         >
-                            <div>
-                                <div className="mb-4">
-                                    <Quote stroke="#4A044E" fill="#4A044E" size={40} strokeWidth={1} className="rotate-180" />
+                            <div className="flex flex-col justify-between h-full">
+                                <div className="">
+                                    <div className="mb-4">
+                                        <Quote stroke="#4A044E" fill="#4A044E" strokeWidth={1} className="rotate-180 size-10" />
+                                    </div>
+                                    <div className="mb-8">
+                                        <p className="text-[#090914] text-md lg:text-lg font-medium leading-snug">
+                                            {testimonial.quote}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="mb-8">
-                                    <p className="text-[#090914] text-[20px] font-medium leading-snug">
-                                        {testimonial.quote}
-                                    </p>
+                                <div className="border-l-4 border-purple-900 pl-4 mt-auto ">
+                                    <h3 className="text-md lg:text-lg font-semibold text-black">
+                                        {testimonial.name}
+                                    </h3>
+                                    <p className="text-gray-700 text-sm lg:text-md">{testimonial.title}</p>
+                                    <p className="text-gray-700 text-sm lg:text-md">{testimonial.location}</p>
                                 </div>
                             </div>
-                            <div className="border-l-4 border-purple-900 pl-4 mt-auto">
-                                <h3 className="text-lg font-semibold text-black">
-                                    {testimonial.name}
-                                </h3>
-                                <p className="text-gray-600 text-sm">{testimonial.title}</p>
-                                <p className="text-gray-600 text-sm">{testimonial.location}</p>
-                            </div>
-                        </div>
+                        </SwiperSlide>
                     ))}
-                </div>
-            </div>
-
-            {/* Pagination Dots */}
-            <div className="flex justify-center gap-2 mt-6">
-                {testimonials.map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => goToSlide(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                            ? "bg-purple-900 scale-125"
-                            : "bg-gray-300 hover:bg-gray-400"
-                            }`}
-                    />
-                ))}
+                </Swiper>
             </div>
         </div>
+
     );
 }
+export default TestimonialCarousel;

@@ -2,13 +2,13 @@
 import logo from '@/public/images/logo.png'
 import Image from "next/image";
 import Link from 'next/link';
-import { Mail, Bell, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet';
 
 const Header = () => {
     return (
         // backdrop-blur-md bg-black/30
-        <header className="z-50 fixed top-0 px-4 md:px-8 lg:px-10 w-full sm:py-1 bg-white">
+        <header className="z-50 fixed top-0 px-4 md:px-8 lg:px-10 w-full sm:py-1  backdrop-blur-sm">
             <div className="flex items-center justify-between">
                 <div>
                     <Image src={logo} alt="logo" className="w-28 md:w-36 h-auto" />
@@ -24,12 +24,6 @@ const Header = () => {
                     ))}
                 </nav>
                 <div className="hidden lg:flex space-x-4">
-                    <div className="bg-[#4A044E] p-2 rounded-md">
-                        <Mail fill="#F5D0FE" color="#4A044E" />
-                    </div>
-                    <div className="bg-[#4A044E] p-2 rounded-md">
-                        <Bell fill="#F5D0FE" color="#F5D0FE" />
-                    </div>
                     <Link href={'/contactUs'}>
                         <div className="bg-[#4A044E] p-2 rounded-md px-4 text-white">
                             Contact Us

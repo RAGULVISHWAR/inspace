@@ -1,48 +1,46 @@
 "use client"
-import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
-import { Button } from "@/components/ui/button";
-import home from "@/public/images/home-img.png"
+import home from "@/public/images/Hero-About-us1.webp"
 import Image from "next/image";
-import { datas } from "@/db/datas"
-import Link from "next/link";
 import { motion } from "framer-motion"
-import { Marquee } from "@/components/magicui/marquee";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import MotionSection from "@/components/Animations/motion";
 import { itemVariants, containerVariants } from "@/components/Animations/motion";
 import ContactForm from "@/components/form/page";
+import { Counter } from "@/components/Animations/counter";
+
 const AboutUS = () => {
+
     const fact = ["/images/fact1.png", "/images/fact2.png", "/images/fact3.png", "/images/fact1.png", "/images/fact2.png",];
     const userj = [
         {
             sno: "01",
             name: "Share Your Requirements",
-            desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it&apos;s shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
+            desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it's shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
             img: "/images/mission.png"
         },
         {
             sno: "02",
             name: "Design That Fits Your Space",
-            desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it&apos;s shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
+            desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it's shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
             img: "/images/vision.png"
         },
         {
             sno: "03",
             name: "High-Quality Manufacturing",
-            desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it&apos;s shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
+            desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it's shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
             img: "/images/mission.png"
         },
         {
             sno: "04",
             name: "Finishing & Quality Checks",
-            desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it&apos;s shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
+            desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it's shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
             img: "/images/vision.png"
         },
 
     ]
     return (
         <motion.div
-            className="w-full h-full mt-20 flex flex-col gap-10 lg:gap-15"
+            className="w-full h-full flex flex-col gap-5 overflow-hidden"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -52,232 +50,177 @@ const AboutUS = () => {
                 <Image src={home} alt="home" fill className="object-cover object-center" />
                 <motion.div
                     variants={itemVariants}
-                    className="absolute left-0 bottom-0 w-full p-5 mb-16 md:p-10 flex flex-col sm:flex-row justify-between items-start sm:items-center"
+                    className="absolute left-0 bottom-0 w-full ml-[5vw] mb-[5vh] flex flex-col sm:flex-row justify-between items-start sm:items-center"
                 >
                     <motion.div
-                        initial={{ opacity: 0, y: -70 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1 }}
-                        className="text-white font-medium text-[clamp(2rem,6vw,4.5rem)]"
+                        variants={itemVariants}
+                        className="text-white font-bold text-2xl md:text-3xl lg:text-4xl  max-w-[70vw] lg:max-w-3xl"
                     >
-                        <p>INSPACE RETAIL</p>
-                        <p>DISPLAYS FOR SHOP</p>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, y: 70 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1 }}
-                        className="space-y-4"
-                    >
-                        <div className="text-gray-100 text-base sm:text-lg max-w-md">
-                            We use modern techniques to boost sustainable farming and protect the environment.
-                        </div>
-                        <div className="flex space-x-4">
-                            <Button className="rounded-full text-base md:text-lg px-6 md:px-12 py-3 md:py-5 transition-all duration-300 ease-in-out transform hover:scale-105">
-                                <Link href={'/blogs'}>Get Started</Link>
-                            </Button>
-                            <Button className="rounded-full border-2 border-white bg-transparent text-base md:text-lg px-6 md:px-12 py-3 md:py-5 transition-all duration-200 ease-in-out transform hover:bg-transparent hover:scale-105">
-                                <Link href={'/aboutUs'}>Know More</Link>
-                            </Button>
-                        </div>
+                        <p className="leading-[1.5] md:leading-[1.2]">Our Story</p>
                     </motion.div>
                 </motion.div>
             </MotionSection>
 
             <motion.div
                 variants={containerVariants}
-                className="px-4 md:px-10 lg:px-20 flex flex-col gap-16 md:gap-24"
+                className="max-w-[90%] mx-auto"
             >
                 {/* Attention Section */}
-                <MotionSection className="Attention flex flex-col-reverse md:flex-row gap-10 md:gap-20">
-                    <motion.div variants={itemVariants} className="flex flex-col gap-5 lg:gap-7">
-                        <p className="text-[clamp(2rem,3vw,4rem)] text-black font-semibold">
+                <MotionSection className="Attention grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 py-5 lg:py-10">
+                    <motion.div variants={itemVariants} className="lg:place-content-center lg:ml-5">
+                        <p className=" text-black text-lg md:text-xl font-semibold py-3">
                             Attention and Maximum Attention to Detail
                         </p>
-                        <p className="text-gray-700 text-[clamp(1rem,1.2vw,2.2rem)] font-medium">
+                        <p className="text-gray-600 text-md md:text-[15px] font-medium py-3  leading-relaxed">
                             At Inspace, we specialize in transforming retail environments with innovative, high-quality display solutions. With a focus on functionality, aesthetics, and durability, we design and manufacture shelving, racks, display units, and customized retail fixtures that enhance customer experience and optimize store layouts. From concept to installation, we deliver seamless, end-to-end solutions tailored to your brand&apos;s needs.
                         </p>
-                        <div className="flex w-full md:w-2/4 gap-5">
-                            <Button className="rounded-full"><Link href={'/blogs'}>Get Started</Link></Button>
-                            <Button className="rounded-full bg-transparent text-primary border-2 hover:bg-transparent border-primary">
-                                <Link href={'/aboutUs'}>Know More</Link>
-                            </Button>
-                        </div>
                     </motion.div>
-                    <motion.div variants={itemVariants} className="flex">
-                        <HeroVideoDialog
-                            videoSrc={"/video.mp4"}
-                            thumbnailAlt="video"
-                            thumbnailSrc="/images/fresh.png"
-                            className="w-[400px] h-[250px] md:h-[500px] md:w-[600px]"
+
+                    <motion.div variants={itemVariants} className="w-full h-[300px] md:h-[450px]  aspect-auto rounded-lg shadow-xl overflow-hidden">
+                        <iframe
+                            className="w-full h-full"
+                            src="https://www.youtube.com/embed/kHkDSkPBzt8?si=hbUppku73p8AGQlz"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
                         />
                     </motion.div>
-                </MotionSection>
 
+                </MotionSection>
+                <MotionSection className="achievements-div items-center mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 px-[2vw] max-w-7xl py-5 lg:py-10 mb-5 lg:mb-10 ">
+                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-4 rounded-md text-primary text-start shadow-lg">
+
+                        <Counter target={38} plus="+" classname="text-3xl xl:text-7xl font-medium text-primary" />
+
+                        <p className="font-normal text-xs lg:text-md xl:text-lg py-2 ml-1">Years</p>
+                    </motion.div>
+                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-4 rounded-md text-primary text-start shadow-lg">
+
+                        <Counter target={1200} plus="+" classname="text-3xl xl:text-7xl font-medium text-primary" />
+
+                        <p className="font-normal text-xs lg:text-md  xl:text-lg py-2 ml-1">Projects Completed</p>
+
+                    </motion.div>
+                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-4 srounded-md text-primary col-span-2 md:col-span-1 shadow-lg">
+
+                        <Counter target={7} classname="text-3xl xl:text-7xl font-medium text-primary" />
+
+                        <p className="font-normal text-xs lg:text-md  xl:text-lg py-2 ml-1">Operating Location</p>
+
+                    </motion.div>
+                </MotionSection>
                 {/* Team Section */}
-                <MotionSection className="Teem space-y-5 md:space-y-10 lg:space-y-16">
-                    <motion.div variants={itemVariants} className="space-y-2 md:space-y-5 lg:space-y-7">
-                        <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center text-primary font-semibold">
+                <MotionSection className="Teem py-5 lg:py-10 max-w-7xl mx-auto">
+                    <motion.div variants={itemVariants} className="head-div w-full gap-6 py-10">
+                        <div className="text-start md:text-center text-primary text-[35px] lg:text-[37px] font-bold py-1">
                             Meet Our Team
-                        </p>
-                        <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
-                            We provide world-class solutions that help you 10x your speed.
-                        </p>
+                        </div>
+                        <div className="text-start text-gray-600 text-[13px] lg:text-[15px] md:text-center place-self-center font-medium text-xs lg:text-sm sm:w-2/4 md:w-4/5 py-1 ">
+                            The Pioneers Behind Every Curve, Joint, and Bespoke Masterpiece
+                        </div>
                     </motion.div>
                     <motion.div
                         variants={containerVariants}
-                        className="grid grid-cols-1 sm:grid-cols-3 gap-5 p-2 md:p-6"
+                        className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-10 pb-5 lg:pb-10"
                     >
                         {[
-                            { name: "Sandesh Koshti", role: "FOUNDER", img: "/images/founder.png" },
-                            { name: "Sandesh Koshti", role: "CO-FOUNDER", img: "/images/co-founder.png" },
-                            { name: "Sandesh Koshti", role: "MANAGER", img: "/images/manager.png" },
+                            { name: "Mr.Prabhakaran", role: "Chairman", img: "/images/founder.webp" },
+                            { name: "Mr.Harihara Subramanian", role: "Managing Director", img: "/images/co-founder.webp" },
+                            { name: "Mr.Karthikeyan", role: "Director", img: "/images/manager.webp" },
                         ].map((member, index) => (
                             <motion.div
                                 key={index}
                                 variants={itemVariants}
-                                className="border-2 border-primaryLight rounded-sm w-full h-[350px] lg:h-[450px] flex flex-col gap-y-2"
+                                className="border-2 border-primary w-full  rounded-md"
                             >
-                                <div className="relative w-full h-full">
-                                    <Image src={member.img} alt={member.role.toLowerCase()} fill className="object-contain" />
-                                </div>
-                                <div className="place-items-center">
-                                    <p className="font-bold text-primary text-[clamp(1rem,1.5vw,1.75rem)]">
-                                        {member.name}
-                                    </p>
-                                    <p className="text-gray-600 font-semibold text-[clamp(0.75rem,1vw,1.5rem)]">
-                                        {member.role}
-                                    </p>
+                                <div className="w-full p-4 ">
+                                    <div className="relative aspect-square rounded-md overflow-hidden" >
+                                        <Image src={member.img} alt={member.role.toLowerCase()} fill className="object-cover" />
+                                    </div>
+                                    <div className="">
+                                        <p className="font-bold text-primary text-[clamp(1rem,1.5vw,1.75rem)]">
+                                            {member.name}
+                                        </p>
+                                        <p className="text-gray-600 font-semibold text-[clamp(0.75rem,1vw,1.5rem)]">
+                                            {member.role}
+                                        </p>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}
                     </motion.div>
-                    <motion.div variants={itemVariants} className="marquee">
-                        <div className="relative space-y-2 md:space-y-5 lg:space-y-7">
-                            <Marquee reverse pauseOnHover className="[--duration:20s]">
-                                <div className="flex flex-row gap-4 md:gap-10">
-                                    {datas.teams.slice(0, 4).map((member, index) => (
-                                        <motion.div
-                                            key={index}
-                                            variants={itemVariants}
-                                            className="flex rounded-full border-2 border-dashed border-black w-fit p-4 pr-20 gap-5"
-                                        >
-                                            <div className="relative overflow-hidden rounded-full w-[50px] h-[50px] md:w-[80px] md:h-[80px]">
-                                                <Image src={member.pic} alt={member.name} fill className="object-contain overflow-hidden" />
-                                            </div>
-                                            <div className="h-fit flex flex-col gap-2">
-                                                <div>
-                                                    <p className="text-[clamp(0.75rem,1vw,2rem)] font-semibold">{member.name}</p>
-                                                    <p className="text-[clamp(0.75rem,1vw,2rem)] text-gray-600">{member.role}</p>
-                                                </div>
-                                                <div className="flex gap-4">
-                                                    <Link href={member.linkedin} className="text-primary text-[clamp(0.75rem,1vw,2rem)] hover:text-black/70 font-medium">
-                                                        Linkedin
-                                                    </Link>
-                                                    <Link href={member.twitter} className="text-primary text-[clamp(0.75rem,1vw,2rem)] hover:text-black/70 font-medium">
-                                                        Twitter
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </Marquee>
-                            <Marquee pauseOnHover className="[--duration:20s]">
-                                <div className="flex flex-row gap-4 md:gap-10">
-                                    {datas.teams.slice(4, 8).map((member, index) => (
-                                        <motion.div
-                                            key={index}
-                                            variants={itemVariants}
-                                            className="flex rounded-full border-2 border-dashed border-black w-fit p-4 pr-20 gap-5"
-                                        >
-                                            <div className="relative overflow-hidden rounded-full w-[50px] h-[50px] md:w-[80px] md:h-[80px]">
-                                                <Image src={member.pic} alt={member.name} fill className="object-contain overflow-hidden" />
-                                            </div>
-                                            <div className="h-fit flex flex-col gap-2">
-                                                <div>
-                                                    <p className="text-[clamp(0.75rem,1vw,2rem)] font-semibold">{member.name}</p>
-                                                    <p className="text-[clamp(0.75rem,1vw,2rem)] text-gray-600">{member.role}</p>
-                                                </div>
-                                                <div className="flex gap-4">
-                                                    <Link href={member.linkedin} className="text-primary text-[clamp(0.75rem,1vw,2rem)] hover:text-black/70 font-medium">
-                                                        Linkedin
-                                                    </Link>
-                                                    <Link href={member.twitter} className="text-primary text-[clamp(0.75rem,1vw,2rem)] hover:text-black/70 font-medium">
-                                                        Twitter
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </Marquee>
-                            <div className="hidden lg:block pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-                            <div className="hidden lg:block pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
-                        </div>
-                    </motion.div>
-                </MotionSection>
-
-                {/* Vision & Mission Section */}
-                <MotionSection className="Vission-mission space-y-5 md:space-y-10 lg:space-y-16">
                     <motion.div
                         variants={itemVariants}
-                        className="flex-row md:flex md:gap-20 lg:gap-24 p-2 sm:p-3 lg:p-5"
+                        className=" w-full h-full py-5 lg:py-10"
                     >
-                        <div className="relative w-full h-[250px] md:w-1/2 md:h-[400px] overflow-hidden rounded-md">
-                            <Image src={'/images/mission.png'} alt="mission" fill className="object-contain" />
+                        <div className="relative w-full h-[200px] sm:h-[300px] lg:h-[500px] overflow-hidden rounded-lg">
+                            <Image src={"/images/Team.webp"} alt="team" fill className="object-cover  w-full h-full" />
                         </div>
-                        <motion.div variants={itemVariants} className="w-full md:w-1/2 pt-2 md:pt-5 space-y-2 md:space-y-5 lg:space-y-7">
-                            <p className="font-bold text-[clamp(2rem,2.8vw,3.5rem)]">Our Mission</p>
-                            <p className="text-gray-600 text-[clamp(0.8rem,1vw,1.5rem)] font-medium">
+
+                    </motion.div>
+                    { /* Vision & Mission Section */}
+                    <motion.div
+                        variants={itemVariants}
+                        className="flex-row lg:flex gap-12 py-5 lg:py-10"
+                    >
+                        <div className="relative w-full h-[250px] lg:w-1/2 md:h-[400px] overflow-hidden rounded-md ">
+                            <Image src={'/images/Mission.webp'} alt="mission" fill className="object-cover" />
+                        </div>
+                        <motion.div variants={itemVariants} className="w-full lg:w-1/2 lg:place-content-center pt-2">
+                            <p className="font-bold text-[23px] md:text-[25px] pb-3">Our Mission</p>
+                            <p className="text-gray-600  text-[14px] md:text-[16px] font-medium">
                                 To redefine retail spaces with smart, functional, and visually appealing display solutions, helping businesses create engaging shopping experiences that drive customer satisfaction and sales.</p>
                         </motion.div>
                     </motion.div>
                     <motion.div
                         variants={itemVariants}
-                        className="flex-row md:flex md:flex-row-reverse gap-5 md:gap-20 lg:gap-24 p-2 sm:p-3 lg:p-5"
+                        className="flex-row lg:flex lg:flex-row-reverse gap-12 py-5 lg:py-10"
                     >
-                        <div className="relative w-full h-[250px] md:w-1/2 md:h-[400px] overflow-hidden rounded-md">
-                            <Image src={'/images/vision.png'} alt="vision" fill className="object-contain" />
+                        <div className="relative w-full h-[250px] lg:w-1/2 md:h-[400px] overflow-hidden rounded-md">
+                            <Image src={'/images/Vision.webp'} alt="vision" fill className="object-cover" />
                         </div>
-                        <motion.div variants={itemVariants} className="w-full md:w-1/2 pt-2 md:pt-5 space-y-2 md:space-y-5 lg:space-y-7">
-                            <p className="font-bold text-[clamp(2rem,2.8vw,3.5rem)]">Our Vission</p>
-                            <p className="text-gray-600 text-[clamp(0.8rem,1vw,1.5rem)] font-medium">
-                                To be a leading provider of retail interiors, setting new industry standards with cutting-edge design, sustainable practices, and innovative solutions that empower brands to succeed in an evolving marketplace.At Inspace, we don&apos;t just build fixtures—we create impactful retail experiences that bring brands to life!</p>
+                        <motion.div variants={itemVariants} className="w-full lg:w-1/2 lg:place-content-center pt-2">
+                            <p className="font-bold text-[23px] md:text-[25px] pb-3">Our Vission</p>
+                            <p className="text-gray-600  text-[14px] md:text-[16px] font-medium">
+                                To be a leading provider of retail interiors, setting new industry standards with cutting-edge design, sustainable practices, and innovative solutions that empower brands to succeed in an evolving marketplace.At Inspace, we don&apos;t just build fixtures—we create impactful retail experiences that bring brands to life!
+                            </p>
                         </motion.div>
                     </motion.div>
+
                 </MotionSection>
 
                 {/* User Journey Section */}
-                <MotionSection className="Journey flex flex-col gap-10 md:gap-20">
-                    <motion.div variants={itemVariants} className="space-y-2 md:space-y-5 lg:space-y-7">
-                        <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-bold text-primary">
-                            User Journey
-                        </p>
-                        <p className="hidden md:flex text-[clamp(1rem,1.2vw,2rem)] font-medium text-center text-gray-700">
-                            At Inspace, we bring your retail vision to life with a seamless and structured process. From design to installation, we take care of every detail to ensure your store is both functional and visually stunning. Here&apos;s how we make it happen:</p>
+                <MotionSection className="Journey flex flex-col gap-3 md:gap-6 max-w-7xl mx-auto">
+                    <motion.div variants={itemVariants} className="head-div w-full gap-6 py-5 lg:py-10">
+                        <div className=" text-start md:text-center text-primary text-[35px] lg:text-[37px] font-bold py-1">
+                            Your Retail Transformation in Six Simple Steps
+                        </div>
+                        <div className=" text-start  text-gray-600 text-[13px] lg:text-[15px] md:text-center place-self-center font-medium text-xs lg:text-sm sm:w-2/4 md:w-4/5 py-1 ">
+                            The Pioneers Behind Every Curve, Joint, and Bespoke Masterpiece
+                        </div>
                     </motion.div>
-                    <motion.div variants={containerVariants} className="flex flex-col gap-10 lg:gap-20">
+                    <motion.div variants={containerVariants} className="flex flex-col ">
                         {userj.map((user, index) => (
                             <motion.div
                                 key={index}
                                 variants={itemVariants}
-                                className={`flex flex-col gap-5 md:gap-7 lg:gap-14 place-items-center ${(index + 1) % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"}`}
+                                className={`flex flex-col gap-6 lg:gap-12 ${(index + 1) % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"} py-5 lg:py-10`}
                             >
-                                <div className="flex w-1/2 md:w-1/6 gap-2 place-self-start md:place-self-center">
-                                    <div className="font-bold text-[clamp(2rem,2.8vw,3.5rem)] place-self-center">
-                                        {user.sno}
+                                <div className="flex flex-col lg:flex-row gap-3 lg:gap-6 place-self-center">
+                                    <div className="flex gap-5">
+                                        <div className="font-bold text-[27px]">
+                                            {user.sno}
+                                        </div>
+                                        <div className="text-gray-500 font-bold line-clamp-2 text-[23px] max-w-[200px] ">
+                                            {user.name}
+                                        </div>
                                     </div>
-                                    <div className="text-gray-700 font-semibold text-[clamp(1rem,1.5vw,2.5rem)] place-self-center h-fit line-clamp-2">
-                                        {user.name}
+                                    <div className="font-medium max-w-[400px] text-[14px] text-gray-700 leading-relaxed">
+                                        {user.desc}
                                     </div>
                                 </div>
-                                <div className="text-[clamp(0.8rem,1vw,1.5rem)] md:w-3/6 font-medium">
-                                    {user.desc}
-                                </div>
-                                <div className="relative overflow-hidden rounded-md w-full h-[250px] md:h-[400px] md:w-2/6">
+                                <div className="relative overflow-hidden rounded-md w-full h-[250px] lg:h-[300px] max-w-[400px]">
                                     <Image src={user.img} alt={user.name} fill className="object-cover" />
                                 </div>
                             </motion.div>
@@ -286,14 +229,11 @@ const AboutUS = () => {
                 </MotionSection>
 
                 {/* Factory Section */}
-                <MotionSection className="Factory flex flex-col gap-10 md:gap-20">
-                    <motion.div variants={itemVariants} className="space-y-2 md:space-y-5 lg:space-y-7">
-                        <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-bold text-primary">
+                <MotionSection className="Factory flex flex-col gap-6 py-5 lg:py-10">
+                    <motion.div variants={itemVariants} className="head-div w-full gap-6 py-5 lg:py-10">
+                        <div className=" text-start md:text-center text-primary text-[35px] lg:text-[37px] font-bold py-1">
                             Explore Our Factory
-                        </p>
-                        <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700 font-medium">
-                            Save your Irreplaceable time by using our Components with No Compromise on Design.
-                        </p>
+                        </div>
                     </motion.div>
                     <motion.div variants={itemVariants}>
                         <Carousel>
@@ -313,14 +253,11 @@ const AboutUS = () => {
                 </MotionSection>
 
                 {/* Award Section */}
-                <MotionSection className="Award rounded-lg border-2 border-black/50 w-full p-3 md:p-5 lg:p-10 space-y-5 md:space-y-10 lg:space-y-16">
-                    <motion.div variants={itemVariants} className="place-self-center">
-                        <p className="font-semibold text-[clamp(1.2rem,1.8vw,3.5rem)]">
-                            The Story Behind Our
-                        </p>
-                        <p className="font-bold text-primary text-[clamp(1.2rem,1.8vw,3.5rem)]">
-                            Award-Winning Projects
-                        </p>
+                <MotionSection className="Award rounded-lg border-2 border-black/50 w-full p-3 md:p-5 py-5 lg:py-10">
+                    <motion.div variants={itemVariants} className="head-div w-full gap-6 py-5 lg:py-10">
+                        <div className=" text-start md:text-center text-primary text-[35px] lg:text-[37px] font-bold py-1">
+                            Certified Excellence
+                        </div>
                     </motion.div>
                     <motion.div variants={containerVariants} className="md:flex space-y-5">
                         {[1, 2, 3].map((num) => (
@@ -336,7 +273,7 @@ const AboutUS = () => {
                 </MotionSection>
 
                 {/* Form Section */}
-                <MotionSection className="Form p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+                <MotionSection className="Form py-5 lg:py-10">
                     <motion.div
                         variants={itemVariants}
                         className="relative w-full h-[500px] md:h-screen rounded-lg overflow-hidden"
@@ -348,6 +285,7 @@ const AboutUS = () => {
                     </motion.div>
                 </MotionSection>
             </motion.div>
+
         </motion.div>
     );
 }

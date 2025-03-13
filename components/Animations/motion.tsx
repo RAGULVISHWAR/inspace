@@ -4,13 +4,13 @@ import { useRef } from "react";
 export const itemVariants = {
     hidden: {
         opacity: 0,
-        y: 75, // Start further down
+        y: -25, // Start further down
     },
     visible: {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.5, // Longer duration
+            duration: 0.7, // Longer duration
             ease: "easeInOut", // Different easing
         },
     },
@@ -31,8 +31,8 @@ function MotionSection({ children, className }: { children: React.ReactNode; cla
     const ref = useRef<HTMLDivElement>(null);
     const isInView = useInView(ref, {
         once: true, // Repeat animation
-        margin: "0px 0px -200px 0px", // Trigger earlier
-        amount: 0.1, // Trigger when 20% visible
+        margin: "0px 0px 0px 0px", // Trigger earlier
+        amount: 0, // Trigger when 20% visible
     });
 
     return (
