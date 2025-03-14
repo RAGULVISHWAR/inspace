@@ -59,7 +59,7 @@ const Home = () => {
   return (
     <div className="home overflow-hidden">
       {/* Welcome Section */}
-      <MotionSection className="welcome-div relative w-full h-screen  mb-5 lg:mb-10 ">
+      <MotionSection className="welcome-div relative w-full h-dvh  mb-5 lg:mb-10 ">
         <Image src={home} alt="home" fill className="object-cover object-center" />
         <motion.div
           variants={itemVariants}
