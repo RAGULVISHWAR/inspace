@@ -55,7 +55,7 @@ const TestimonialCarousel = () => {
         <div>
             <div>
                 <Swiper
-                    className="w-auto max-w-7xl mx-auto h-72 lg:h-96"
+                    className="w-[80vw] md:w-auto max-w-7xl mx-auto h-72 lg:h-96"
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                     spaceBetween={10}
                     slidesPerView={1}
@@ -81,7 +81,7 @@ const TestimonialCarousel = () => {
                             <div className="flex flex-col justify-between h-full">
                                 <div className="">
                                     <div className="mb-4">
-                                        <Quote stroke="#4A044E" fill="#4A044E" strokeWidth={1} className="rotate-180 size-10" />
+                                        <Quote stroke="#4A044E" fill="#4A044E" strokeWidth={1} className="rotate-180 size-8 md:size-10" />
                                     </div>
                                     <div className="mb-8">
                                         <p className="text-[#090914] text-md lg:text-lg font-medium leading-snug">
@@ -93,8 +93,6 @@ const TestimonialCarousel = () => {
                                     <h3 className="text-md lg:text-lg font-semibold text-black">
                                         {testimonial.name}
                                     </h3>
-                                    <p className="text-gray-700 text-sm lg:text-md">{testimonial.title}</p>
-                                    <p className="text-gray-700 text-sm lg:text-md">{testimonial.location}</p>
                                 </div>
                             </div>
                         </SwiperSlide>

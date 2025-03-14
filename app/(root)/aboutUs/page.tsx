@@ -16,25 +16,25 @@ const AboutUS = () => {
             sno: "01",
             name: "Share Your Requirements",
             desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it's shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
-            img: "/images/mission.png"
+            img: "/images/06.webp"
         },
         {
             sno: "02",
             name: "Design That Fits Your Space",
             desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it's shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
-            img: "/images/vision.png"
+            img: "/images/05.webp"
         },
         {
             sno: "03",
             name: "High-Quality Manufacturing",
             desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it's shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
-            img: "/images/mission.png"
+            img: "/images/06.webp"
         },
         {
             sno: "04",
             name: "Finishing & Quality Checks",
             desc: "It all starts with you! Tell us about your retail space, the fixtures you need—whether it's shelving, display units, counters, or customized solutions. Share your store layout, branding preferences, and any specific requirements. Our team will assess your needs and provide a detailed quotation with pricing, timelines, and terms to get started.",
-            img: "/images/vision.png"
+            img: "/images/hero-project.webp"
         },
 
     ]
@@ -46,7 +46,7 @@ const AboutUS = () => {
             animate="visible"
         >
             {/* Welcome Section */}
-            <MotionSection className="welcome-div relative w-full h-screen">
+            <MotionSection className="welcome-div relative w-full h-dvh">
                 <Image src={home} alt="home" fill className="object-cover object-center" />
                 <motion.div
                     variants={itemVariants}
@@ -113,7 +113,7 @@ const AboutUS = () => {
                 {/* Team Section */}
                 <MotionSection className="Teem py-5 lg:py-10 max-w-7xl mx-auto">
                     <motion.div variants={itemVariants} className="head-div w-full gap-6 py-10">
-                        <div className="text-start md:text-center text-primary text-[35px] lg:text-[37px] font-bold py-1">
+                        <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 px-4">
                             Meet Our Team
                         </div>
                         <div className="text-start text-gray-600 text-[13px] lg:text-[15px] md:text-center place-self-center font-medium text-xs lg:text-sm sm:w-2/4 md:w-4/5 py-1 ">
@@ -193,7 +193,7 @@ const AboutUS = () => {
                 {/* User Journey Section */}
                 <MotionSection className="Journey flex flex-col gap-3 md:gap-6 max-w-7xl mx-auto">
                     <motion.div variants={itemVariants} className="head-div w-full gap-6 py-5 lg:py-10">
-                        <div className=" text-start md:text-center text-primary text-[35px] lg:text-[37px] font-bold py-1">
+                        <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 px-4">
                             Your Retail Transformation in Six Simple Steps
                         </div>
                         <div className=" text-start  text-gray-600 text-[13px] lg:text-[15px] md:text-center place-self-center font-medium text-xs lg:text-sm sm:w-2/4 md:w-4/5 py-1 ">
@@ -230,8 +230,8 @@ const AboutUS = () => {
 
                 {/* Factory Section */}
                 <MotionSection className="Factory flex flex-col gap-6 py-5 lg:py-10">
-                    <motion.div variants={itemVariants} className="head-div w-full gap-6 py-5 lg:py-10">
-                        <div className=" text-start md:text-center text-primary text-[35px] lg:text-[37px] font-bold py-1">
+                    <motion.div variants={itemVariants} className="head-div w-full gap-6 pb-5">
+                        <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 px-4">
                             Explore Our Factory
                         </div>
                     </motion.div>
@@ -253,18 +253,21 @@ const AboutUS = () => {
                 </MotionSection>
 
                 {/* Award Section */}
-                <MotionSection className="Award rounded-lg border-2 border-black/50 w-full p-3 md:p-5 py-5 lg:py-10">
-                    <motion.div variants={itemVariants} className="head-div w-full gap-6 py-5 lg:py-10">
-                        <div className=" text-start md:text-center text-primary text-[35px] lg:text-[37px] font-bold py-1">
+                <MotionSection className="Award rounded-lg border-2 border-black/50 w-full px-4 py-5 xl:py-10 xl:px-8">
+                    <motion.div variants={itemVariants} className="head-div w-full py-2 xl:pl-16 pb-5">
+                        <div className=" text-start  text-black text-[20px] lg:text-[35px] font-bold leading-tight">
                             Certified Excellence
                         </div>
+                        <div className=" text-start text-primary text-[20px] lg:text-[35px] font-bold leading-tight">
+                            Commitment to Quality & Innovation
+                        </div>
                     </motion.div>
-                    <motion.div variants={containerVariants} className="md:flex space-y-5">
+                    <motion.div variants={containerVariants} className="w-full md:flex pb-5">
                         {[1, 2, 3].map((num) => (
                             <motion.div
                                 key={num}
                                 variants={itemVariants}
-                                className="relative w-full h-[250px] md:w-1/3 md:h-[400px] overflow-hidden rounded-md"
+                                className="relative w-full h-[250px] md:h-[400px] overflow-hidden rounded-md mb-3"
                             >
                                 <Image src={`/images/award${num}.png`} alt={`award${num}`} fill className="object-contain" />
                             </motion.div>
@@ -273,17 +276,6 @@ const AboutUS = () => {
                 </MotionSection>
 
                 {/* Form Section */}
-                <MotionSection className="Form py-5 lg:py-10">
-                    <motion.div
-                        variants={itemVariants}
-                        className="relative w-full h-[500px] md:h-screen rounded-lg overflow-hidden"
-                    >
-                        <Image src={"/images/form.png"} alt="form" fill className="object-cover" />
-                        <div className="absolute inset-0 flex items-center justify-center md:right-2/4 md:top-1/4">
-                            <ContactForm />
-                        </div>
-                    </motion.div>
-                </MotionSection>
             </motion.div>
 
         </motion.div>

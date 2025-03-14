@@ -14,7 +14,7 @@ const Header = () => {
                     <Image src={logo} alt="logo" className="w-28 md:w-36 h-auto" />
                 </div>
                 <nav className="hidden lg:flex items-center space-x-4 md:space-x-8 lg:space-x-12 ">
-                    {[['Home', '/'], ['About Us', '/aboutUs'], ['Projects', '/projects/1'], ['Insights', '/blogs']].map((item, index) => (
+                    {[['Home', '/'], ['About Us', '/aboutUs'], ['Projects', '/project'], ['Insights', '/blogs']].map((item, index) => (
                         <Link href={item[1]} key={index}>
                             <div className="relative group text-primary hover:text-gray-600 text-sm md:text-base lg:text-lg font-bold">
                                 <p>{item[0]}</p>
@@ -47,7 +47,7 @@ const Header = () => {
                                 <SheetTitle></SheetTitle>
                             </SheetHeader>
                             <div className='flex flex-col space-y-5 p-4'>
-                                {[['Home', '/'], ['About Us', '/aboutUs'], ['Projects', '/projects/1'], ['Insights', '/blogs'], ['ContactUs', '/contactUs']].map((item, index) => (
+                                {[['Home', '/'], ['About Us', '/aboutUs'], ['Projects', '/projects'], ['Insights', '/blogs'], ['ContactUs', '/contactUs']].map((item, index) => (
                                     <Link href={item[1]} key={index}>
                                         <SheetClose asChild>
                                             <div className="relative group text-primary hover:text-gray-600 text-xl font-bold">
