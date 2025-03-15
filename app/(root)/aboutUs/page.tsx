@@ -87,21 +87,21 @@ const AboutUS = () => {
                     </motion.div>
 
                 </MotionSection>
-                <MotionSection className="achievements-div items-center mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 px-[2vw] max-w-7xl py-5 lg:py-10 mb-5 lg:mb-10 ">
-                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-4 rounded-md text-primary text-start shadow-lg">
+                <MotionSection className="achievements-div items-center mx-auto grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 px-[2vw] max-w-7xl  mb-2 lg:mb-10 ">
+                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 rounded-lg text-primary text-start shadow-lg">
 
                         <Counter target={38} plus="+" classname="text-3xl xl:text-7xl font-medium text-primary" />
 
                         <p className="font-normal text-xs lg:text-md xl:text-lg py-2 ml-1">Years</p>
                     </motion.div>
-                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-4 rounded-md text-primary text-start shadow-lg">
+                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 rounded-lg text-primary text-start shadow-lg">
 
                         <Counter target={1200} plus="+" classname="text-3xl xl:text-7xl font-medium text-primary" />
 
                         <p className="font-normal text-xs lg:text-md  xl:text-lg py-2 ml-1">Projects Completed</p>
 
                     </motion.div>
-                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-4 srounded-md text-primary col-span-2 md:col-span-1 shadow-lg">
+                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 rounded-lg text-primary col-span-2 md:col-span-1 shadow-lg">
 
                         <Counter target={7} classname="text-3xl xl:text-7xl font-medium text-primary" />
 
@@ -112,7 +112,7 @@ const AboutUS = () => {
                 {/* Team Section */}
                 <MotionSection className="Teem py-5 lg:py-10 max-w-7xl mx-auto">
                     <motion.div variants={itemVariants} className="head-div w-full gap-6 py-10">
-                        <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 px-4">
+                        <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 ">
                             Meet Our Team
                         </div>
                         <div className="text-start text-gray-600 text-[13px] lg:text-[15px] md:text-center place-self-center font-medium text-xs lg:text-sm sm:w-2/4 md:w-4/5 py-1 ">
@@ -151,7 +151,7 @@ const AboutUS = () => {
                     </motion.div>
                     <motion.div
                         variants={itemVariants}
-                        className=" w-full h-full py-5 lg:py-10"
+                        className=" w-full h-full py-5 lg:py-10 pb-10"
                     >
                         <div className="relative w-full h-[200px] sm:h-[300px] lg:h-[500px] overflow-hidden rounded-lg">
                             <Image src={"/images/Team.webp"} alt="team" fill className="object-cover  w-full h-full" />
@@ -161,14 +161,14 @@ const AboutUS = () => {
                     { /* Vision & Mission Section */}
                     <motion.div
                         variants={itemVariants}
-                        className="flex-row lg:flex gap-12 py-5 lg:py-10"
+                        className="flex-row lg:flex gap-12 py-5 lg:py-10 pb-10"
                     >
-                        <div className="relative w-full h-[250px] lg:w-1/2 md:h-[400px] overflow-hidden rounded-md ">
+                        <div className="relative w-full h-[250px] lg:w-1/2 md:h-[400px] overflow-hidden rounded-md">
                             <Image src={'/images/Mission.webp'} alt="mission" fill className="object-cover" />
                         </div>
-                        <motion.div variants={itemVariants} className="w-full lg:w-1/2 lg:place-content-center pt-2">
-                            <p className="font-bold text-[23px] md:text-[25px] pb-3">Our Mission</p>
-                            <p className="text-gray-600  text-[14px] md:text-[16px] font-medium">
+                        <motion.div variants={itemVariants} className="w-full lg:w-1/2 lg:place-content-center pt-3">
+                            <p className="font-bold text-[27px] lg:text-[29px] lg:pb-3">Our Mission</p>
+                            <p className="text-gray-600  text-[16px] md:text-[18px] font-medium">
                                 To redefine retail spaces with smart, functional, and visually appealing display solutions, helping businesses create engaging shopping experiences that drive customer satisfaction and sales.</p>
                         </motion.div>
                     </motion.div>
@@ -179,9 +179,9 @@ const AboutUS = () => {
                         <div className="relative w-full h-[250px] lg:w-1/2 md:h-[400px] overflow-hidden rounded-md">
                             <Image src={'/images/Vision.webp'} alt="vision" fill className="object-cover" />
                         </div>
-                        <motion.div variants={itemVariants} className="w-full lg:w-1/2 lg:place-content-center pt-2">
-                            <p className="font-bold text-[23px] md:text-[25px] pb-3">Our Vission</p>
-                            <p className="text-gray-600  text-[14px] md:text-[16px] font-medium">
+                        <motion.div variants={itemVariants} className="w-full lg:w-1/2 lg:place-content-center pt-3">
+                            <p className="font-bold text-[27px] lg:text-[29px] lg:pb-3">Our Vission</p>
+                            <p className="text-gray-600  text-[16px] md:text-[18px] font-medium">
                                 To be a leading provider of retail interiors, setting new industry standards with cutting-edge design, sustainable practices, and innovative solutions that empower brands to succeed in an evolving marketplace.At Inspace, we don&apos;t just build fixtures—we create impactful retail experiences that bring brands to life!
                             </p>
                         </motion.div>
@@ -192,7 +192,7 @@ const AboutUS = () => {
                 {/* User Journey Section */}
                 <MotionSection className="Journey flex flex-col gap-3 md:gap-6 max-w-7xl mx-auto">
                     <motion.div variants={itemVariants} className="head-div w-full gap-6 py-5 lg:py-10">
-                        <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 px-4">
+                        <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 ">
                             Your Retail Transformation in Six Simple Steps
                         </div>
                         <div className=" text-start  text-gray-600 text-[13px] lg:text-[15px] md:text-center place-self-center font-medium text-xs lg:text-sm sm:w-2/4 md:w-4/5 py-1 ">
@@ -215,7 +215,7 @@ const AboutUS = () => {
                                             {user.name}
                                         </div>
                                     </div>
-                                    <div className="font-medium max-w-[400px] text-[14px] text-gray-700 leading-relaxed">
+                                    <div className="font-medium max-w-[400px] text-[16px] text-gray-700 leading-relaxed">
                                         {user.desc}
                                     </div>
                                 </div>
@@ -228,9 +228,9 @@ const AboutUS = () => {
                 </MotionSection>
 
                 {/* Factory Section */}
-                <MotionSection className="Factory flex flex-col gap-6 py-5 lg:py-10">
-                    <motion.div variants={itemVariants} className="head-div w-full gap-6 pb-5">
-                        <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 px-4">
+                <MotionSection className="Factory flex flex-col py-5 lg:py-10 pt-8 mb-5 lg:mb-10">
+                    <motion.div variants={itemVariants} className="head-div w-full pb-5">
+                        <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1">
                             Explore Our Factory
                         </div>
                     </motion.div>
@@ -252,7 +252,7 @@ const AboutUS = () => {
                 </MotionSection>
 
                 {/* Award Section */}
-                <MotionSection className="Award rounded-lg border-2 border-black/50 w-full px-4 py-5 xl:py-10 xl:px-8">
+                <MotionSection className="Award rounded-lg border-2 border-black/50 w-full px-4 py-5 xl:py-10 xl:px-8 mb-5 lg:mb-10">
                     <motion.div variants={itemVariants} className="head-div w-full py-2 xl:pl-16 pb-5">
                         <div className=" text-start  text-black text-[20px] lg:text-[35px] font-bold leading-tight">
                             Certified Excellence

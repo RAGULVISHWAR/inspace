@@ -58,7 +58,7 @@ const ContactUs = () => {
 
             <motion.div
                 variants={containerVariants}
-                className="mx-[4vw]"
+                className="mx-[4vw] "
             >
                 {/* Location Section */}
                 <MotionSection className="location max-w-7xl mx-auto mb-5 lg:mb-10">
@@ -110,7 +110,7 @@ const ContactUs = () => {
                 </MotionSection>
 
                 {/* Steps Section */}
-                <MotionSection className="step">
+                <MotionSection className="step mb-5 lg:mb-10 lg:pt-16">
                     <motion.div variants={itemVariants} className="head-div w-full gap-6 pb-5 lg:pb-10">
                         <div className="text-start sm:text-center text-black  text-[28px] md:text-[32px] font-bold py-1 px-2">
                             How it works?
@@ -144,7 +144,7 @@ const ContactUs = () => {
                 </MotionSection>
 
                 {/* Testimonial Section */}
-                <MotionSection className="testimonal-div px-[2vw]  max-w-7xl mx-auto py-3 mb-5 lg:mb-10">
+                <MotionSection className="testimonal-div px-[2vw]  max-w-7xl mx-auto py-3 mb-5 lg:mb-10 lg:pt-16">
                     <motion.div variants={itemVariants} className="head-div w-full pt-5 pb-2 lg:pb-10">
                         <div className="text-start md:text-center text-primary text-[28px] md:text-[32px] font-bold py-1 max-w-7xl  leading-tight">
                             Hear from Those Who&apos;ve Experienced the Inspace Difference
