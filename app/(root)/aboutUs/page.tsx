@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import MotionSection from "@/components/Animations/motion";
 import { itemVariants, containerVariants } from "@/components/Animations/motion";
-import ContactForm from "@/components/form/page";
 import { Counter } from "@/components/Animations/counter";
 
 const AboutUS = () => {

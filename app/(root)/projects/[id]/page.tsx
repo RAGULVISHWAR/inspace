@@ -3,6 +3,7 @@ import { datas } from "@/db/datas";
 interface Project {
     id: string;
     name: string;
+    category: string;
     description: string;
     project_img: string[]; // Array of image URLs
     solution: string;

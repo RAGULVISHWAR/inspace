@@ -55,9 +55,9 @@ const TestimonialCarousel = () => {
         <div>
             <div>
                 <Swiper
-                    className="w-[80vw] md:w-auto max-w-7xl mx-auto h-72 lg:h-96"
+                    className="w-[70vw] md:w-auto max-w-7xl mx-auto h-72"
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-                    spaceBetween={10}
+                    spaceBetween={25}
                     slidesPerView={1}
                     breakpoints={{
                         640: { slidesPerView: 1 },
@@ -76,21 +76,21 @@ const TestimonialCarousel = () => {
                     {testimonials.map((testimonial, index) => (
                         <SwiperSlide
                             key={index}
-                            className="w-full py-6 px-4 bg-[#FAE8FF]rounded-xl h-full"
+                            className=" w-full py-6 px-4 lg:py-8  lg:px-6 bg-[#FAE8FF] rounded-lg h-fit"
                         >
-                            <div className="flex flex-col justify-between h-full">
+                            <div className="flex flex-col justify-between h-[250px]">
                                 <div className="">
                                     <div className="mb-4">
-                                        <Quote stroke="#4A044E" fill="#4A044E" strokeWidth={1} className="rotate-180 size-8 md:size-10" />
+                                        <Quote stroke="#4A044E" fill="#4A044E" strokeWidth={1} className="rotate-180 size-5 md:size-8" />
                                     </div>
                                     <div className="mb-8">
-                                        <p className="text-[#090914] text-md lg:text-lg font-medium leading-snug">
+                                        <p className="text-[#090914] text-[12px] lg:text-[18px] font-semibold leading-snug">
                                             {testimonial.quote}
                                         </p>
                                     </div>
                                 </div>
                                 <div className="border-l-4 border-purple-900 pl-4 mt-auto ">
-                                    <h3 className="text-md lg:text-lg font-semibold text-black">
+                                    <h3 className="text-md lg:text-[19px] font-semibold text-black">
                                         {testimonial.name}
                                     </h3>
                                 </div>

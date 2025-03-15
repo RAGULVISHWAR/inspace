@@ -45,9 +45,6 @@ const SuggestionProjects = ({ selectedProjectId }: { selectedProjectId: string }
                                             <p className="text-white font-semibold text-[clamp(1.2rem,2vw,2.5rem)] leading-tight">
                                                 {prj.name}
                                             </p>
-                                            <p className="rounded-full bg-primaryLight text-primary text-[clamp(0.8rem,1vw,1.2rem)] font-medium px-4 py-2 w-max">
-                                                Talk to an Interior Design Expert
-                                            </p>
                                         </div>
                                     </div>
                                 </div>

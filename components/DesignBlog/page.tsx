@@ -37,14 +37,7 @@ const DesignBlog = ({ blog }: { blog: Design }) => {
             "Can you handle large-scale orders and pan-India delivery?",
             "Yes. Our logistics network enables us to deliver and install across India, so we can easily manage multiple locations or large retail chains."
         ],
-        [
-            "What if I need to update or reconfigure my fixtures later?",
-            "Our solutions are modular, so you can easily add, remove, or rearrange components to adapt to changing inventory or layout needs."
-        ],
-        [
-            "How do I get started with an Inspace project?",
-            " Simply reach out to our team with your requirements. We&apos;ll set up a consultation, discuss your vision, and propose a tailored solution to meet your goals."
-        ]
+
     ];
 
     useEffect(() => {
@@ -63,7 +56,7 @@ const DesignBlog = ({ blog }: { blog: Design }) => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="mt-28  px-4 lg:px-10 flex flex-col gap-5 lg:gap-20"
+            className="mt-28  px-[2%] flex flex-col gap-5 lg:gap-20"
         >
             <MotionSection className="h-screen px-2 flex flex-col gap-16 lg:gap-20">
                 <motion.div
@@ -116,15 +109,14 @@ const DesignBlog = ({ blog }: { blog: Design }) => {
                 </motion.div>
             </MotionSection>
             <MotionSection>
-                <motion.div
-                    variants={containerVariants}
-                    className="w-full place-items-center"
-                >
-                    <p className="text-4xl font-bold text-primary">Explore More</p>
+                <motion.div variants={itemVariants} className="head-div w-full pt-5 pb-2 lg:pb-5">
+                    <div className="text-start md:text-center text-primary text-[28px] md:text-[32px] font-bold py-1 leading-tight">
+                        Explore More
+                    </div>
                 </motion.div>
                 <motion.div
                     variants={containerVariants}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-5 md:gap-6 lg:gap-8 p-2 sm:p-3 md:p-5 lg:p-7">
+                    className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-5 md:gap-6 lg:gap-8 p-2 lg:px-7">
                     {suggestedProjects?.map((prj, index) => (
                         <Link href={`/blog/${prj.id}`} key={index}>
                             <motion.div
@@ -134,8 +126,8 @@ const DesignBlog = ({ blog }: { blog: Design }) => {
                                 <Image src={prj.img as string} alt={`${prj.name}`} fill />
                                 <div className="absolute inset-0 flex items-end bg-black/50 p-2 md:p-4">
                                     <div>
-                                        <div className="flex flex-col space-y-2  w-full">
-                                            <p className="text-white font-semibold text-xl leading-tight">
+                                        <div className="flex flex-col py-2 px-2 w-full">
+                                            <p className="text-white font-semibold text-[18px] lg:text-[22px] leading-tight">
                                                 {prj.name}
                                             </p>
                                         </div>
@@ -148,45 +140,31 @@ const DesignBlog = ({ blog }: { blog: Design }) => {
                     )}
                 </motion.div>
             </MotionSection>
-            <MotionSection className="caption-div p-5 sm:p-7 md:p-9 lg:p-12 space-y-10">
+            <MotionSection className="caption-div w-full py-5 mb-5 lg:mb-10">
                 <motion.div
                     variants={itemVariants}
-                    className="head-div text-primary place-items-center w-full space-y-3 sm:space-y-4 md:space-y-5"
+                    className="bg-primaryLight rounded-md  py-5"
                 >
-                    <p className="rounded-full border border-primary p-2 px-6 w-fit font-semibold text-[clamp(0.9rem,1vw,1.2rem)]">
-                        Caption
-                    </p>
-                    <p className="text-[clamp(1.2rem,1.8vw,3.5rem)] text-center font-semibold">
-                        Frequently Asked Questions
-                    </p>
-                    <p className="text-[clamp(1rem,1.2vw,2rem)] text-center text-gray-700">
-                        Still you have any questions? Contact our Team via{" "}
-                        <Link href={'support@inspacestore.in'} className="text-blue-500">
-                            support@inspacestore.in
-                        </Link>
-                    </p>
-                </motion.div>
-                <motion.div
-                    variants={itemVariants}
-                    className="bg-primaryLight rounded-md p-10 sm:mx-5 md:mx-10 lg:mx-20"
-                >
-                    <motion.div variants={itemVariants}>
-                        <p className="text-[clamp(1rem,1.2vw,2.2rem)] font-semibold">
-                            Category goes here
+                    <motion.div
+                        variants={itemVariants}
+                        className="head-div place-items-center w-full pb-5 py-3 lg:pb-16"
+                    >
+                        <p className="text-start md:text-center text-primary text-[28px] md:text-[32px] font-bold py-1 px-2 max-w-7xl  w-full leading-tight">
+                            Frequently Asked Questions
                         </p>
-                        <p className="hidden md:block text-[clamp(0.9rem,1vw,1.2rem)]">
-                            Lorem ipsum dolor sit amet consectetur. Sit et phasellus ullamcorper at.
+                        <p className="text-start sm:text-center place-self-center font-medium text-xs lg:text-sm md:w-4/5 py-1 px-2">
+                            Still you have any questions? Contact our Team via <Link href={'/'} className="text-sky-400 font-normal">support@inspacestore.in</Link>
                         </p>
                     </motion.div>
-                    <motion.div variants={containerVariants}>
+                    <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-4">
                         {questions.map((q, index) => (
                             <motion.div variants={itemVariants} key={index}>
-                                <Accordion type="single" collapsible className="w-full sm:pt-3 md:pt-6 lg:pt-10">
+                                <Accordion type="single" collapsible className="">
                                     <AccordionItem value={`item-${index}`}>
-                                        <AccordionTrigger className="text-[clamp(1rem,1.2vw,2.2rem)]">
+                                        <AccordionTrigger className="text-sm md:text-md font-semibold ">
                                             {q[0]}
                                         </AccordionTrigger>
-                                        <AccordionContent className="text-[clamp(0.9rem,1vw,1.2rem)] lg:mr-9">
+                                        <AccordionContent className="!text-xs md:text-sm font-[450] leading-relaxed  md:max-w-3xl">
                                             {q[1]}
                                         </AccordionContent>
                                     </AccordionItem>

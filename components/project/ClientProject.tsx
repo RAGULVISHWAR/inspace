@@ -7,6 +7,7 @@ import { itemVariants, containerVariants } from "@/components/Animations/motion"
 interface Project {
     id: string;
     name: string;
+    category: string;
     description: string;
     project_img: string[]; // Array of image URLs
     solution: string;
@@ -62,10 +63,61 @@ const ClientProject = ({ project }: { project: Project }) => {
                 </motion.div>
             </MotionSection>
             {/* ... rest of your sections unchanged */}
+            <MotionSection>
+                <motion.div
+                    variants={itemVariants}
+                    className="flex max-w-7xl mx-auto flex-col md:flex-row gap-8 md:gap-16 lg:gap-28  mt-16 md:mt-36 mb-10 justify-center px-2"
+                >
+                    <div className="h-full flex md:flex-col  gap-14" >
+                        <div className="pb-2 lg:pb-5">
+                            <h2 className="font-bold text-primary text-[18px] pb-2" >
+                                Client
+                            </h2>
+                            <p className="text-[14px] text-gray-700 font-medium">
+                                {project?.name}
+                            </p>
+                        </div>
+                        <div className="pb-2 lg:pb-5">
+                            <h2 className="font-bold text-primary text-[18px]  pb-2">
+                                Category
+                            </h2>
+                            <p className="text-[14px] text-gray-700 font-medium">
+                                {project.category}
+                            </p>
+                        </div>
+                        <div className="pb-2 lg:pb-5">
+                            <h2 className="font-bold text-primary text-[18px]  pb-2">
+                                Location
+                            </h2>
+                            <p className="text-[14px] text-gray-700 font-medium">
+                                Velachery, Chennai
+                            </p>
+                        </div>
+                    </div>
+                    <div className="h-full flex flex-col gap-10">
+                        <div className="pb-2 lg:pb-10">
+                            <h2 className="font-bold text-primary text-[23px] pb-2 lg:pb-5">
+                                Inspace&apos;s Solution
+                            </h2>
+                            <p className="max-w-[700px] text-[16px] font-medium text-gray-600 lg:leading-loose">
+                                {project.solution}
+                            </p>
+                        </div>
+                        <div className="pb-2 lg:pb-10">
+                            <h2 className="font-bold text-primary text-[23px] pb-2 lg:pb-5">
+                                Outcomes
+                            </h2>
+                            <p className="max-w-[700px]  text-[16px] font-medium text-gray-600 lg:leading-loose">
+                                {project.outcome}
+                            </p>
+                        </div>
+                    </div>
+                </motion.div>
+            </MotionSection>
             {/* Section 2: Solution */}
             <MotionSection className="flex flex-col py-5 mb-5 lg:mb-10 px-2">
-                <motion.div variants={itemVariants} className="head-div w-full">
-                    <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold pb-3 px-4">
+                <motion.div variants={itemVariants} className="head-div w-full pb-3 lg:pb-4">
+                    <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold pb-3 px-2">
                         Gallery
                     </div>
                 </motion.div>
@@ -96,7 +148,7 @@ const ClientProject = ({ project }: { project: Project }) => {
 
 
             {/* Section 4: For More */}
-            <MotionSection className="p-2 ">
+            <MotionSection className="p-2">
                 <motion.div variants={itemVariants} className="head-div w-full ">
                     <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 px-4">
                         For More

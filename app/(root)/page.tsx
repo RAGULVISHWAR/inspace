@@ -216,12 +216,11 @@ const Home = () => {
       </MotionSection>
 
       {/* Testimonial Section */}
-      <MotionSection className="testimonal-div px-[2vw] flex flex-col gap-7 md:gap-10 max-w-7xl mx-auto py-3 mb-5 lg:mb-10">
-        <motion.div variants={itemVariants} className="head-div w-full gap-6 py-2 ">
+      <MotionSection className="testimonal-div px-[2vw]  max-w-7xl mx-auto py-3 mb-5 lg:mb-10">
+        <motion.div variants={itemVariants} className="head-div w-full pt-5 pb-2 lg:pb-10">
           <div className="text-start md:text-center text-primary text-[28px] md:text-[32px] font-bold py-1 max-w-7xl px-6 leading-tight">
             Hear from Those Who&apos;ve Experienced the Inspace Difference
           </div>
-
         </motion.div>
         <motion.div variants={itemVariants} className="max-w-5xl mx-auto">
           <TestimonialCarousel />
@@ -236,7 +235,7 @@ const Home = () => {
         >
           <motion.div
             variants={itemVariants}
-            className="head-div place-items-center w-full pb-5 py-3"
+            className="head-div place-items-center w-full pb-5 py-3 lg:pb-16"
           >
             <p className="text-start md:text-center text-primary text-[28px] md:text-[32px] font-bold py-1 max-w-7xl px-4 leading-tight">
               Frequently Asked Questions

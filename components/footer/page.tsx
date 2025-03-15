@@ -15,65 +15,65 @@ const Footer = () => {
     }
     const year = new Date().getFullYear();
     return (
-        <footer className="w-full border-t-2 px-5 md:px-16 text-[clamp(0.9rem,1vw,1.2rem)] py-4">
+        <footer className="w-full border-t-2 px-[5%] text-[clamp(0.9rem,1vw,1.2rem)] py-4">
             <div className='hidden md:block'>
                 <Image src={logo} alt="logo" className="w-28 md:w-36 h-auto" />
             </div>
-            <div className="flex flex-col-reverse md:flex-row justify-evenly">
+            <div className="flex flex-col-reverse md:flex-row justify-evenly pb-5">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4 pb-4 md:place-self-center md:w-2/4">
-                    <div>
+                    <div className='py-4 px-2'>
                         <div>
-                            <p className="text-primary font-semibold">Info</p>
+                            <p className="text-primary text-[14px] lg:text-[16px] font-semibold  pb-4 lg:pb-7">INFO</p>
                         </div>
                         <div>
                             <Link href={'/'}>
-                                <p className="font-medium text-gray-700">About us</p>
+                                <p className="font-medium text-gray-700 text-[14px] lg:text-[15px] pb-1 lg:pb-2">About us</p>
                             </Link>
                             <Link href={'/'}>
-                                <p className="font-medium text-gray-700">Works</p>
+                                <p className="font-medium text-gray-700 text-[14px] lgtext-[15px] pb-1 lg:pb-2">Works</p>
                             </Link>
                             <Link href={'/'}>
-                                <p className="font-medium text-gray-700">Contacts</p>
-                            </Link>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <p className="text-primary font-semibold">About us</p>
-                        </div>
-                        <div>
-                            <Link href={'/'}>
-                                <p className="font-medium text-gray-700">Gallery</p>
-                            </Link>
-                            <Link href={'/'}>
-                                <p className="font-medium text-gray-700">Services</p>
-                            </Link>
-                            <Link href={'/'}>
-                                <p className="font-medium text-gray-700">Products</p>
+                                <p className="font-medium text-gray-700 text-[14px] lg:text-[15px] pb-1 lg:pb-2">Contacts</p>
                             </Link>
                         </div>
                     </div>
-                    <div>
+                    <div className='py-4 px-2'>
                         <div>
-                            <p className="text-primary font-semibold">Contact us</p>
+                            <p className="text-primary text-[14px] lg:text-[16px] font-semibold  pb-4 lg:pb-7">ABOUT US</p>
                         </div>
                         <div>
-                            <p className="font-medium text-gray-700">+91 9876543210</p>
-                            <p className="font-medium text-gray-700">info@inspace.com</p>
-                            <p className="font-medium text-gray-700">No. XX, Street Name, City, State - ZIP</p>
+                            <Link href={'/'}>
+                                <p className="font-medium text-gray-700 text-[14px] lg:text-[15px] pb-1 lg:pb-2">Gallery</p>
+                            </Link>
+                            <Link href={'/'}>
+                                <p className="font-medium text-gray-700 text-[14px] lg:text-[15px] pb-1 lg:pb-2">Services</p>
+                            </Link>
+                            <Link href={'/'}>
+                                <p className="font-medium text-gray-700 text-[14px] lg:text-[15px] pb-1 lg:pb-2">Products</p>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className='py-4 px-2'>
+                        <div>
+                            <p className="text-primary text-[14px] lg:text-[16px] font-semibold  pb-4 lg:pb-7">CONTACT US</p>
+                        </div>
+                        <div>
+                            <p className="font-medium text-gray-700 text-[14px] lg:text-[15px] pb-1 lg:pb-2">+91 9876543210</p>
+                            <p className="font-medium text-gray-700 text-[14px] lg:text-[15px] pb-1 lg:pb-2">info@inspace.com</p>
+                            <p className="font-medium text-gray-700 text-[14px] lg:text-[15px] pb-1 lg:pb-2">No. XX, Street Name, City, State - ZIP</p>
                         </div>
                     </div>
                 </div>
-                <div className="p-4 bg-primary rounded-lg w-[400px] py-5 place-self-center m-3">
-                    <div className="py-4 text-gray-600 ">
-                        <p>
+                <div className="bg-primary rounded-xl min-w-[300px] max-w-[400px] py-4 lg:py-6 px-6 place-self-center ">
+                    <div className="py-2">
+                        <p className='font-bold text-gray-500 text-[19px] lg:text-[22px]'>
                             Seeking personalized support?
                         </p>
-                        <p className="text-white">
+                        <p className="text-white font-semibold text-[19px] lg:text-[22px]">
                             Request a call from our team
                         </p>
                     </div>
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleSubmit} className="py-2">
                         <input
                             type="text"
                             name="name"
@@ -81,7 +81,7 @@ const Footer = () => {
                             onChange={handleChange}
                             placeholder="Your Name"
                             required
-                            className="w-full p-2 border border-white rounded-lg bg-primary "
+                            className="w-full p-3 mb-6 border border-white rounded-lg bg-primary "
                         />
                         <input
                             type="tel"
@@ -90,11 +90,11 @@ const Footer = () => {
                             onChange={handleChange}
                             placeholder="Phone Number"
                             required
-                            className="w-full p-2 border border-white rounded-lg bg-primary "
+                            className="w-full p-3 mb-6 border border-white rounded-lg bg-primary "
                         />
                         <button
                             type="submit"
-                            className="w-full p-2 rounded-full bg-primaryLight"
+                            className="w-full p-3  rounded-full bg-primaryLight font-medium"
                         >
                             Send a request
                         </button>
