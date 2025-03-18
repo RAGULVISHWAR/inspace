@@ -1,12 +1,13 @@
 "use client";
 
-import { Quote } from "lucide-react";
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { Navigation, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { useRef } from "react";
 
 const testimonials = [
     {
@@ -53,10 +54,12 @@ const TestimonialCarousel = () => {
 
     return (
         <div>
-            <div>
+            <div className="relative">
+
                 <Swiper
-                    className="w-[70vw] md:w-auto max-w-7xl mx-auto h-72"
-                    modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+
+                    className="mySwiper w-[350px] md:w-auto max-w-7xl mx-auto h-[350px]"
+                    modules={[Navigation, Scrollbar, A11y, Autoplay]}
                     spaceBetween={25}
                     slidesPerView={1}
                     breakpoints={{
@@ -64,10 +67,9 @@ const TestimonialCarousel = () => {
                         768: { slidesPerView: 2 },
                         1024: { slidesPerView: 3 },
                     }}
-                    navigation
+                    navigation={true}
                     autoplay={{ delay: 3000, disableOnInteraction: false }}
                     loop={true}
-                    pagination={{ clickable: true }}
                     scrollbar={{ draggable: true }}
 
                 // onSwiper={(swiper) => console.log(swiper)}
@@ -76,7 +78,7 @@ const TestimonialCarousel = () => {
                     {testimonials.map((testimonial, index) => (
                         <SwiperSlide
                             key={index}
-                            className=" w-full py-6 px-4 lg:py-8  lg:px-6 bg-[#FAE8FF] rounded-lg h-fit"
+                            className=" py-8 px-6 lg:py-8  lg:px-6 bg-[#FAE8FF] rounded-lg h-fit"
                         >
                             <div className="flex flex-col justify-between h-[250px]">
                                 <div className="">
@@ -84,7 +86,7 @@ const TestimonialCarousel = () => {
                                         <Quote stroke="#4A044E" fill="#4A044E" strokeWidth={1} className="rotate-180 size-5 md:size-8" />
                                     </div>
                                     <div className="mb-8">
-                                        <p className="text-[#090914] text-[12px] lg:text-[18px] font-semibold leading-snug">
+                                        <p className="text-[#090914] text-[18px] font-medium leading-snug">
                                             {testimonial.quote}
                                         </p>
                                     </div>

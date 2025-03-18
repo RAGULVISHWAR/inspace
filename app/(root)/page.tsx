@@ -99,22 +99,22 @@ const Home = () => {
       </MotionSection>
 
       {/* Choose Section */}
-      <MotionSection className="choose-div w-full bg-primaryLight place-content-center mb-5 lg:mb-10 px-[4vw] ">
+      <MotionSection className="choose-div w-full bg-primaryLight place-content-center mb-5 lg:mb-10 px-[2vw] ">
         <motion.div
           variants={containerVariants}
           className="max-w-7xl mx-auto"
         >
-          <motion.div variants={itemVariants} className="head-div w-full gap-6 py-10">
-            <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 px-4">
+          <motion.div variants={itemVariants} className="head-div w-full gap-6 py-10 pl-2">
+            <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 ">
               Why Choose Inspace?
             </div>
-            <div className=" text-start sm:text-center place-self-center font-medium text-xs lg:text-sm md:w-4/5 py-1 px-4">
+            <div className=" text-start sm:text-center place-self-center font-medium text-xs lg:text-sm md:w-4/5 py-1 ">
               At Inspace, we&apos;re committed to creating commercial interiors and furniture solutions that go beyond the ordinary. From innovative designs to reliable support, everything we do is focused on helping you transform your space into an immersive and efficient environment.
             </div>
           </motion.div>
           <motion.div
             variants={containerVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mb-5 pb-5 lg:pb-10"
+            className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mb-5 pb-5 lg:pb-10 px-2"
           >
             {[
               ["Tailored & Modular Solutions", "We believe every brand has its own story. Our modular systems and custom displays let you shape your space exactly the way you envision without compromise."],
@@ -141,21 +141,21 @@ const Home = () => {
       <MotionSection className="feature-div w-full text-primary px-[2vw] mb-5 lg:mb-10">
         <motion.div
           variants={itemVariants}
-          className="head-div place-items-center w-full py-5 lg:py-10"
+          className="head-div place-items-center w-full py-5 lg:py-10 px-2"
         >
-          <p className="text-start md:text-center text-primary text-[28px] md:text-[32px] font-bold py-1 max-w-7xl px-6 leading-tight">
+          <p className="text-start md:text-center text-primary text-[28px] md:text-[32px] font-bold py-1 max-w-7xl  leading-tight">
             Our interior design projects provide a glimpse into our expertise.
           </p>
-          <p className="text-start md:text-center place-self-start md:place-self-center font-medium text-xs lg:text-sm sm:w-2/4 md:w-4/5 py-1 px-6">
+          <p className="text-start md:text-center place-self-start md:place-self-center font-medium text-xs lg:text-sm sm:w-2/4 md:w-4/5 py-1 ">
             Click for more to explore our portfolio.
           </p>
         </motion.div>
-        <motion.div variants={containerVariants} className="portfolios-div mb-5 lg:mb-10 py-5 lg:py-10 px-2">
+        <motion.div variants={containerVariants} className="portfolios-div mb-5 lg:mb-10 py-5 lg:py-10 ">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-5  px-1 sm:px-6 md:px-8 lg:px-10 max-w-7xl mx-auto">
             {image?.length > 0 && image.map((img, index) => (
               <motion.div variants={itemVariants} key={index}>
                 <Link href={img[3]}>
-                  <div className="relative w-full h-[250px] lg:h-[400px] xl:h-[500px] rounded-xl overflow-hidden group transition-transform transform duration-700 ease-linear hover:scale-105">
+                  <div className="relative w-full h-[250px] lg:h-[350px]  rounded-xl overflow-hidden group transition-transform transform duration-700 ease-linear hover:scale-105">
                     <Image
                       src={img[1]}
                       alt={img[2]}
@@ -169,7 +169,7 @@ const Home = () => {
                     <p className="opacity-100 absolute bottom-0 left-0 text-white text-[clamp(1.2rem,1.5vw,3.5rem)] p-3 sm:p-5 md:p-7 font-semibold text-center transition-opacity duration-300 ease-out group-hover:opacity-0">
                       {img[2]}
                     </p>
-                    <p className="opacity-0 absolute top-1/2 left-1/4 text-white text-[clamp(1.2rem,1.5vw,3.5rem)] p-3 sm:p-5 md:p-7 font-semibold text-center transition-opacity duration-500 ease-out group-hover:opacity-100">
+                    <p className="opacity-0 absolute justify-center inset-0 top-[40%] text-white text-[clamp(1.2rem,1.5vw,3.5rem)] p-3 sm:p-5 md:p-7 font-semibold text-center transition-opacity duration-500 ease-out group-hover:opacity-100">
                       {img[2]}
                     </p>
                   </div>
@@ -193,7 +193,7 @@ const Home = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="relative w-full h-[100px] md:h-[250px] rounded-2xl overflow-hidden group"
+                className="relative w-full h-[70px] md:h-[250px] rounded-2xl overflow-hidden group"
               >
                 <Image
                   src={ct[0]}
@@ -201,7 +201,7 @@ const Home = () => {
                   fill
                   className="object-cover transition-transform transform duration-300 ease-in-out group-hover:scale-110"
                 />
-                <div className="absolute top-1 md:top-1/3 w-full h-[90px]">
+                <div className="absolute top-1 md:top-1/3 w-full h-[60px] md:h-[90px]">
                   <Image
                     src={ct[1]}
                     alt={`${index}`}
@@ -217,34 +217,34 @@ const Home = () => {
 
       {/* Testimonial Section */}
       <MotionSection className="testimonal-div px-[2vw]  max-w-7xl mx-auto py-3 mb-5 lg:mb-10">
-        <motion.div variants={itemVariants} className="head-div w-full pt-5 pb-2 lg:pb-10">
-          <div className="text-start md:text-center text-primary text-[28px] md:text-[32px] font-bold py-1 max-w-7xl px-6 leading-tight">
+        <motion.div variants={itemVariants} className="head-div w-full pt-5 pb-2 lg:pb-10 px-2">
+          <div className="text-start md:text-center text-primary text-[28px] md:text-[32px] font-bold py-1 max-w-7xl  leading-tight">
             Hear from Those Who&apos;ve Experienced the Inspace Difference
           </div>
         </motion.div>
-        <motion.div variants={itemVariants} className="max-w-5xl mx-auto">
+        <motion.div variants={itemVariants} className=" mx-auto">
           <TestimonialCarousel />
         </motion.div>
       </MotionSection>
 
       {/* FAQ Section */}
-      <MotionSection className="caption-div w-full py-5 mb-5 lg:mb-10">
+      <MotionSection className="caption-div w-full py-5 mb-5 lg:mb-10 px-3">
         <motion.div
           variants={itemVariants}
-          className="bg-primaryLight rounded-md px-5 py-5"
+          className="bg-primaryLight rounded-md px-2 py-5"
         >
           <motion.div
             variants={itemVariants}
-            className="head-div place-items-center w-full pb-5 py-3 lg:pb-16"
+            className="head-div place-items-center w-full pb-5 py-3 lg:pb-16 px-2"
           >
-            <p className="text-start md:text-center text-primary text-[28px] md:text-[32px] font-bold py-1 max-w-7xl px-4 leading-tight">
+            <p className="text-start md:text-center text-primary text-[28px] md:text-[32px] font-bold py-1 max-w-7xl leading-tight">
               Frequently Asked Questions
             </p>
-            <p className="text-start sm:text-center place-self-center font-medium text-xs lg:text-sm md:w-4/5 py-1 px-4">
+            <p className="text-start sm:text-center place-self-center font-medium text-xs lg:text-sm md:w-4/5 py-1 ">
               Still you have any questions? Contact our Team via <Link href={'/'} className="text-sky-400 font-normal">support@inspacestore.in</Link>
             </p>
           </motion.div>
-          <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-2">
+          <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-5 pb-5 lg:pb-10">
             {questions.map((q, index) => (
               <motion.div variants={itemVariants} key={index}>
                 <Accordion type="single" collapsible className="">

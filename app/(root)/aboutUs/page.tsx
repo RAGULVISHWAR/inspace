@@ -62,11 +62,11 @@ const AboutUS = () => {
 
             <motion.div
                 variants={containerVariants}
-                className="max-w-[90%] mx-auto"
+                className="mx-[4vw]"
             >
                 {/* Attention Section */}
-                <MotionSection className="Attention grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 py-5 lg:py-10">
-                    <motion.div variants={itemVariants} className="lg:place-content-center lg:ml-5">
+                <MotionSection className="Attention grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 py-5 lg:py-10 mb-5 lg:mb-10">
+                    <motion.div variants={itemVariants} className="lg:place-content-center lg:ml-5 order-2 md:order-1">
                         <p className=" text-black text-lg md:text-xl font-semibold py-3">
                             Attention and Maximum Attention to Detail
                         </p>
@@ -75,7 +75,7 @@ const AboutUS = () => {
                         </p>
                     </motion.div>
 
-                    <motion.div variants={itemVariants} className="w-full h-[300px] md:h-[450px]  aspect-auto rounded-lg shadow-xl overflow-hidden">
+                    <motion.div variants={itemVariants} className="w-full h-[300px] md:h-[450px]  aspect-auto rounded-lg shadow-xl overflow-hidden order-1 md:order-2">
                         <iframe
                             className="w-full h-full"
                             src="https://www.youtube.com/embed/kHkDSkPBzt8?si=hbUppku73p8AGQlz"
@@ -87,31 +87,31 @@ const AboutUS = () => {
                     </motion.div>
 
                 </MotionSection>
-                <MotionSection className="achievements-div items-center mx-auto grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 px-[2vw] max-w-7xl  mb-2 lg:mb-10 ">
-                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 rounded-lg text-primary text-start shadow-lg">
+                <MotionSection className="achievements-div items-center mx-auto grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 max-w-7xl  mb-2 lg:mb-10 ">
+                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-6 rounded-lg text-primary text-start shadow-lg">
 
                         <Counter target={38} plus="+" classname="text-3xl xl:text-7xl font-medium text-primary" />
 
-                        <p className="font-normal text-xs lg:text-md xl:text-lg py-2 ml-1">Years</p>
+                        <p className="font-normal text-[10px] lg:text-md xl:text-lg py-2 ml-1">Years</p>
                     </motion.div>
-                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 rounded-lg text-primary text-start shadow-lg">
+                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-6 rounded-lg text-primary text-start shadow-lg ">
 
                         <Counter target={1200} plus="+" classname="text-3xl xl:text-7xl font-medium text-primary" />
 
-                        <p className="font-normal text-xs lg:text-md  xl:text-lg py-2 ml-1">Projects Completed</p>
+                        <p className="font-normal text-[10px] lg:text-md  xl:text-lg py-2 ml-1">Projects Completed</p>
 
                     </motion.div>
-                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-7 rounded-lg text-primary col-span-2 md:col-span-1 shadow-lg">
+                    <motion.div variants={itemVariants} className="relative bg-primaryLight p-6 rounded-lg text-primary col-span-2 md:col-span-1 shadow-lg">
 
                         <Counter target={7} classname="text-3xl xl:text-7xl font-medium text-primary" />
 
-                        <p className="font-normal text-xs lg:text-md  xl:text-lg py-2 ml-1">Operating Location</p>
+                        <p className="font-normal text-[10px] lg:text-md  xl:text-lg py-2 ml-1">Operating Location</p>
 
                     </motion.div>
                 </MotionSection>
                 {/* Team Section */}
-                <MotionSection className="Teem py-5 lg:py-10 max-w-7xl mx-auto">
-                    <motion.div variants={itemVariants} className="head-div w-full gap-6 py-10">
+                <MotionSection className="Teem py-5 lg:py-10 max-w-7xl mx-auto mt-10">
+                    <motion.div variants={itemVariants} className="head-div w-full gap-6 py-5 lg:py-10 px-2">
                         <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 ">
                             Meet Our Team
                         </div>
@@ -166,9 +166,9 @@ const AboutUS = () => {
                         <div className="relative w-full h-[250px] lg:w-1/2 md:h-[400px] overflow-hidden rounded-md">
                             <Image src={'/images/Mission.webp'} alt="mission" fill className="object-cover" />
                         </div>
-                        <motion.div variants={itemVariants} className="w-full lg:w-1/2 lg:place-content-center pt-3">
+                        <motion.div variants={itemVariants} className="w-full lg:w-1/2 lg:place-content-center pt-3 px-2">
                             <p className="font-bold text-[27px] lg:text-[29px] lg:pb-3">Our Mission</p>
-                            <p className="text-gray-600  text-[16px] md:text-[18px] font-medium">
+                            <p className="text-gray-600  text-[16px] md:text-[18px] font-medium ">
                                 To redefine retail spaces with smart, functional, and visually appealing display solutions, helping businesses create engaging shopping experiences that drive customer satisfaction and sales.</p>
                         </motion.div>
                     </motion.div>
@@ -179,7 +179,7 @@ const AboutUS = () => {
                         <div className="relative w-full h-[250px] lg:w-1/2 md:h-[400px] overflow-hidden rounded-md">
                             <Image src={'/images/Vision.webp'} alt="vision" fill className="object-cover" />
                         </div>
-                        <motion.div variants={itemVariants} className="w-full lg:w-1/2 lg:place-content-center pt-3">
+                        <motion.div variants={itemVariants} className="w-full lg:w-1/2 lg:place-content-center pt-3 px-2">
                             <p className="font-bold text-[27px] lg:text-[29px] lg:pb-3">Our Vission</p>
                             <p className="text-gray-600  text-[16px] md:text-[18px] font-medium">
                                 To be a leading provider of retail interiors, setting new industry standards with cutting-edge design, sustainable practices, and innovative solutions that empower brands to succeed in an evolving marketplace.At Inspace, we don&apos;t just build fixtures—we create impactful retail experiences that bring brands to life!
@@ -190,8 +190,8 @@ const AboutUS = () => {
                 </MotionSection>
 
                 {/* User Journey Section */}
-                <MotionSection className="Journey flex flex-col gap-3 md:gap-6 max-w-7xl mx-auto">
-                    <motion.div variants={itemVariants} className="head-div w-full gap-6 py-5 lg:py-10">
+                <MotionSection className="Journey flex flex-col max-w-7xl mx-auto mt-5">
+                    <motion.div variants={itemVariants} className="head-div w-full lg:py-10 px-2 pb-3">
                         <div className="text-start sm:text-center text-primary  text-[28px] md:text-[32px] font-bold py-1 ">
                             Your Retail Transformation in Six Simple Steps
                         </div>
@@ -215,11 +215,11 @@ const AboutUS = () => {
                                             {user.name}
                                         </div>
                                     </div>
-                                    <div className="font-medium max-w-[400px] text-[16px] text-gray-700 leading-relaxed">
+                                    <div className="font-medium max-w-[400px] text-[16px] text-gray-700 leading-relaxed px-2 lg:px-0">
                                         {user.desc}
                                     </div>
                                 </div>
-                                <div className="relative overflow-hidden rounded-md w-full h-[250px] lg:h-[300px] max-w-[400px]">
+                                <div className="relative overflow-hidden rounded-md w-full h-[250px] lg:h-[300px] max-w-[400px] ">
                                     <Image src={user.img} alt={user.name} fill className="object-cover" />
                                 </div>
                             </motion.div>
