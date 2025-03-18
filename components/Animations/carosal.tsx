@@ -1,6 +1,6 @@
 "use client";
 
-
+import { Quote } from "lucide-react";
 import { Navigation, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import Swiper and modules styles
