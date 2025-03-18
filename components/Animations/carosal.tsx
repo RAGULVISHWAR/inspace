@@ -1,13 +1,13 @@
 "use client";
 
-import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+
 import { Navigation, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { useRef } from "react";
+
 
 const testimonials = [
     {
